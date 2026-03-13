@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
@@ -840,100 +841,7 @@
         </div>
     </footer>
 
-    <!-- Developer Profile Modal -->
-    <div class="dev-modal-overlay" id="dev-modal">
-        <div class="dev-modal-card">
-            <button class="dev-modal-close" id="dev-modal-close"><i class="fas fa-times"></i></button>
 
-            <!-- Animated Particles -->
-            <div class="dev-particles">
-                <span></span><span></span><span></span><span></span><span></span><span></span>
-            </div>
-
-            <!-- Profile Header - Centered -->
-            <div class="dev-modal-header">
-                <div class="dev-avatar-wrapper">
-                    <div class="dev-avatar-ring">
-                        <img src="WhatsApp Image 2026-01-27 at 16.45.13.jpeg" alt="Abhishek Singh" class="dev-avatar">
-                        <div class="dev-avatar-glow"></div>
-                        <div class="dev-avatar-orbit"></div>
-                    </div>
-                </div>
-                <h2 class="dev-name">Abhishek Singh</h2>
-                <p class="dev-title"><i class="fas fa-laptop-code"></i> Full-Stack Developer</p>
-                <div class="dev-status-pill"><span class="dev-pulse"></span> Available for Projects</div>
-            </div>
-
-            <!-- Stats Row -->
-            <div class="dev-stats-row">
-                <div class="dev-stat">
-                    <span class="dev-stat-num">1+</span>
-                    <span class="dev-stat-label">Years Exp</span>
-                </div>
-                <div class="dev-stat-divider"></div>
-                <div class="dev-stat">
-                    <span class="dev-stat-num">10+</span>
-                    <span class="dev-stat-label">Projects</span>
-                </div>
-                <div class="dev-stat-divider"></div>
-                <div class="dev-stat">
-                    <span class="dev-stat-num">100%</span>
-                    <span class="dev-stat-label">Success Rate</span>
-                </div>
-            </div>
-
-            <!-- Body -->
-            <div class="dev-modal-body">
-                <div class="dev-bio-card">
-                    <p class="dev-bio">
-                        Passionate full-stack developer specializing in building <strong>premium web experiences</strong>. I architect scalable applications with modern UI/UX design, transforming ideas into intuitive digital realities.
-                    </p>
-                </div>
-
-                <div class="dev-bento-grid">
-                    <div class="dev-bento-item dev-bento-tech">
-                        <h4 class="dev-section-title"><i class="fas fa-layer-group"></i> Core Tech Stack</h4>
-                        <div class="dev-skills-grid">
-                            <span class="dev-skill" style="--delay: 0.05s"><i class="fab fa-react" style="color:#61DAFB"></i> React</span>
-                            <span class="dev-skill" style="--delay: 0.1s"><i class="fab fa-node-js" style="color:#339933"></i> Node.js</span>
-                            <span class="dev-skill" style="--delay: 0.15s"><i class="fab fa-js-square" style="color:#F7DF1E"></i> JavaScript</span>
-                            <span class="dev-skill" style="--delay: 0.2s"><i class="fas fa-database" style="color:#47A248"></i> MongoDB</span>
-                            <span class="dev-skill" style="--delay: 0.25s"><i class="fab fa-html5" style="color:#E34F26"></i> HTML/CSS</span>
-                            <span class="dev-skill" style="--delay: 0.3s"><i class="fab fa-figma" style="color:#F24E1E"></i> UI/UX</span>
-                        </div>
-                    </div>
-
-                    <div class="dev-bento-item dev-bento-project">
-                        <div class="dev-project-badge">
-                            <div class="dev-project-icon"><i class="fas fa-crown"></i></div>
-                            <div>
-                                <strong>Featured Work: Heaven Rooms</strong>
-                                <span>End-to-End Premium Student PG Platform</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Connect Links -->
-                <h4 class="dev-section-title"><i class="fas fa-paper-plane"></i> Let's Connect</h4>
-                <div class="dev-connect-links">
-                    <a href="https://wa.me/918409898626" target="_blank" class="dev-link dev-link-wa">
-                        <i class="fab fa-whatsapp"></i> WhatsApp
-                    </a>
-                    <a href="mailto:abhisingh11644@gmail.com" class="dev-link dev-link-mail">
-                        <i class="fas fa-envelope"></i> Email
-                    </a>
-                    <a href="https://github.com/Abhi-2636" target="_blank" class="dev-link dev-link-gh">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                    <a href="https://www.linkedin.com/in/abhishek-kumar-797aa7219" target="_blank"
-                        class="dev-link dev-link-li">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div> <audio id="click-sound" src="https://actions.google.com/sounds/v1/ui/click_1.ogg" preload="auto"></audio>
     <div class="modal-overlay" id="modal">
         <div class="modal-box">
             <div class="modal-head">
@@ -1383,12 +1291,8 @@
 
         // Developer Profile Modal
         const devBtn = $('#dev-profile-btn');
-        const devModal = $('#dev-modal');
-        const devClose = $('#dev-modal-close');
-        if (devBtn && devModal) {
-            devBtn.onclick = () => devModal.classList.add('show');
-            devClose.onclick = () => devModal.classList.remove('show');
-            devModal.onclick = (e) => { if (e.target === devModal) devModal.classList.remove('show'); };
+        if (devBtn) {
+            devBtn.onclick = () => openDeveloperPage();
         }
 
         // --- NEW PREMIUM UI/UX EFFECTS ---
@@ -1455,6 +1359,7 @@
     </script>
     <!-- Smooth Scroll Library -->
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="javascript/developer.js"></script>
 </body>
 
 </html>
