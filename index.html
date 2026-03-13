@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heaven Rooms — Premium Student Living Near LPU</title>
+    <meta name="description"
+        content="Heaven Rooms — Premium student accommodation near LPU Phagwara. Fully furnished rooms starting ₹5,000/month with WiFi, AC, and 24/7 support.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+
+<body>
+    <div class="noise-overlay"></div>
+    <div id="scroll-progress"></div>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    <div id="fomo-toast" class="hidden">
+        <div class="fomo-content">
+            <i class="fas fa-bolt" style="color:#F59E0B"></i>
+            <span id="fomo-msg"></span>
+        </div>
+    </div>
+    <div id="preloader">
+        <div class="pl-half pl-left"></div>
+        <div class="pl-half pl-right"></div>
+        <div class="pl-content">
+            <div class="pl-logo-wrap">
+                <img src="https://i.postimg.cc/52FwvGfv/BA1-F5-A65-42-FD-4-C39-B643-08-F541044-EE3-1-201-a.jpg"
+                    alt="Heaven Rooms">
+                <div class="pl-shimmer"></div>
+            </div>
+            <h2 class="pl-brand">HEAVEN ROOMS</h2>
+            <div class="pl-bar-wrap">
+                <div class="pl-progress"></div>
+            </div>
+            <div class="pl-text">Elevating Student Living</div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="https://i.postimg.cc/52FwvGfv/BA1-F5-A65-42-FD-4-C39-B643-08-F541044-EE3-1-201-a.jpg"
+                    alt="Heaven Rooms">
+                <div class="logo-text">
+                    <h1>Heaven Rooms</h1><span>Enjoy Your Stay</span>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="#properties">Properties</a>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#faq">FAQ</a>
+                <a href="maintenance.html">Maintenance</a>
+                <a href="#contact" class="nav-cta-btn"><i class="fab fa-whatsapp"></i> Contact</a>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </header>
+
+    <div class="mobile-nav" id="mobile-nav">
+        <a href="#properties">Properties</a><a href="#services">Services</a>
+        <a href="#about">About</a><a href="#faq">FAQ</a>
+        <a href="maintenance.html">Maintenance</a><a href="#contact">Contact</a>
+        <div class="mobile-socials">
+            <a href="https://wa.me/919142272776" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/heavensrooms_" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="tel:+919142272776"><i class="fas fa-phone"></i></a>
+            <a href="#" id="mobile-theme-toggle" aria-label="Toggle Dark Mode"><i class="fas fa-moon"></i></a>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero-video-bg">
+        <div class="video-overlay"></div>
+        <video autoplay loop muted playsinline class="bg-vid" id="hero-vid">
+            <source src="https://cdn.pixabay.com/video/2020/04/17/36384-411479815_large.mp4" type="video/mp4">
+        </video>
+        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=2070&auto=format&fit=crop"
+            alt="Luxury Room Background" class="bg-img-fallback">
+
+        <div class="hero-center-content">
+            <div class="hero-chip-glass" data-reveal>
+                <span class="pulse-green"></span> 20+ Premium Properties Near LPU
+            </div>
+            <h2 class="hero-title-main" data-reveal>
+                Elevate Your <span>Student</span> Living Experience.
+            </h2>
+            <p class="hero-subtitle" data-reveal>
+                Discover fully-furnished luxury PGs with zero brokerage, lightning-fast WiFi, and uncompromising 24/7
+                support.
+            </p>
+
+            <div class="hero-action-dock glass-card" data-reveal>
+                <div class="dock-input-group">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="hero-quick-search" placeholder="Search by PG name or area...">
+                </div>
+                <div class="dock-buttons">
+                    <button class="btn-dock-primary" onclick="window.location.href='#properties'">
+                        Find Rooms <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <a href="https://wa.me/919142272776" target="_blank" class="btn-dock-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Chat
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-social-proof" data-reveal>
+                <div class="avatar-stack">
+                    <img src="https://i.pravatar.cc/100?img=1" alt="User">
+                    <img src="https://i.pravatar.cc/100?img=2" alt="User">
+                    <img src="https://i.pravatar.cc/100?img=3" alt="User">
+                    <img src="https://i.pravatar.cc/100?img=4" alt="User">
+                    <div class="avatar-more">500+</div>
+                </div>
+                <div class="social-proof-text">
+                    <div class="stars">★★★★★</div>
+                    <span>Loved by LPU Students</span>
+                </div>
+            </div>
+            <div class="hero-trust-badges" data-reveal>
+                <span><i class="fas fa-shield-alt"></i> Zero Deposit Issues</span>
+                <span><i class="fas fa-check-circle"></i> Verified Properties</span>
+                <span><i class="fas fa-headset"></i> 24/7 Support</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="metrics-section">
+        <div class="metrics-container" data-reveal>
+            <div class="metric-box glass-card">
+                <div class="metric-icon"><i class="fas fa-building"></i></div>
+                <div class="metric-info">
+                    <div class="stat-val" data-target="20">0</div>
+                    <div class="stat-lbl">Premium PGs</div>
+                </div>
+            </div>
+            <div class="metric-box glass-card">
+                <div class="metric-icon"><i class="fas fa-users"></i></div>
+                <div class="metric-info">
+                    <div class="stat-val" data-target="500" data-suffix="+">0</div>
+                    <div class="stat-lbl">Happy Tenants</div>
+                </div>
+            </div>
+            <div class="metric-box glass-card">
+                <div class="metric-icon"><i class="fas fa-star" style="color:#F39C12"></i></div>
+                <div class="metric-info">
+                    <div class="stat-val" data-target="4" data-suffix=".8">0</div>
+                    <div class="stat-lbl">Google Rating</div>
+                </div>
+            </div>
+            <div class="metric-box glass-card">
+                <div class="metric-icon"><i class="fas fa-headset"></i></div>
+                <div class="metric-info">
+                    <div class="stat-val" data-target="24" data-suffix="/7">0</div>
+                    <div class="stat-lbl">Active Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Properties -->
+    <section id="properties" class="section" style="background:var(--bg-soft)">
+        <div class="sec-container">
+            <div class="sec-header" data-reveal>
+                <div class="sec-tag"><i class="fas fa-building"></i> Properties</div>
+                <h2 class="sec-title">Explore Our Rooms</h2>
+                <p class="sec-desc">Handpicked, fully-furnished PGs near LPU. Click any card for details.</p>
+            </div>
+            <div class="filter-row" data-reveal>
+                <div class="search-input-wrap">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search" placeholder="Search properties...">
+                    <div id="search-dropdown" class="search-dropdown hidden"></div>
+                </div>
+                <div class="filter-scroll-wrapper">
+                    <button class="fb active" data-filter="all">All <span class="fb-count"
+                            id="count-all">0</span></button>
+                    <button class="fb" data-filter="under7k">Under ₹7K <span class="fb-count"
+                            id="count-u7k">0</span></button>
+                    <button class="fb" data-filter="7k-10k">₹7K–₹10K <span class="fb-count"
+                            id="count-7k10k">0</span></button>
+                    <button class="fb" data-filter="above10k">₹10K+ <span class="fb-count"
+                            id="count-a10k">0</span></button>
+                    <button class="fb" data-filter="available">Available <span class="fb-count"
+                            id="count-avail">0</span></button>
+                </div>
+                <div class="filter-actions-right">
+                    <select class="sort-select" id="sort-select">
+                        <option value="default">Sort</option>
+                        <option value="low-high">Price: Low → High</option>
+                        <option value="high-low">Price: High → Low</option>
+                        <option value="name">Name: A → Z</option>
+                    </select>
+                </div>
+            </div>
+            <div class="results-meta" data-reveal>
+                <span id="prop-count-label">Showing <strong id="prop-count-num">0</strong> premium rooms</span>
+            </div>
+            <div id="property-list" class="prop-grid"></div>
+            <div id="no-results" class="empty-state hidden">
+                <div class="empty-icon"><i class="fas fa-search-location"></i></div>
+                <h3>No rooms match your search</h3>
+                <p>Try adjusting your price filters or searching for a different area.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section">
+        <div class="sec-container">
+            <div class="sec-header" data-reveal style="text-align: center; max-width: 600px; margin: 0 auto 3rem auto;">
+                <div class="sec-tag"><i class="fas fa-gem"></i> Premium Amenities</div>
+                <h2 class="sec-title">Experience the Heaven Rooms Standard</h2>
+                <p class="sec-desc">Elevate your student life with our handpicked facilities, designed for ultimate
+                    comfort and peace of mind.</p>
+            </div>
+
+            <div class="adv-services-grid" data-reveal>
+                <div class="adv-srv-card glass-card">
+                    <div class="adv-srv-icon" style="background:var(--primary-bg); color:var(--primary)"><i
+                            class="fas fa-shield-alt"></i></div>
+                    <h4>24/7 Security</h4>
+                    <p>Complete peace of mind with biometric access, CCTV, and on-site guards.</p>
+                </div>
+
+                <div class="adv-srv-card glass-card">
+                    <div class="adv-srv-icon" style="background:var(--amber-bg); color:var(--amber)"><i
+                            class="fas fa-bolt"></i></div>
+                    <h4>Power Backup</h4>
+                    <p>Uninterrupted power supply to ensure your studies never stop.</p>
+                </div>
+
+                <div class="adv-srv-card glass-card">
+                    <div class="adv-srv-icon" style="background:var(--coral-bg); color:var(--coral)"><i
+                            class="fas fa-wifi"></i></div>
+                    <h4>High-Speed WiFi</h4>
+                    <p>Enterprise-grade internet access perfect for streaming and studying.</p>
+                </div>
+
+                <div class="adv-srv-card glass-card">
+                    <div class="adv-srv-icon" style="background:var(--green-bg); color:var(--green)"><i
+                            class="fas fa-broom"></i></div>
+                    <h4>Daily Housekeeping</h4>
+                    <p>Professional cleaning of rooms and common areas every single day.</p>
+                </div>
+
+                <div class="adv-srv-card glass-card">
+                    <div class="adv-srv-icon" style="background:var(--primary-bg); color:var(--primary)"><i
+                            class="fas fa-tools"></i></div>
+                    <h4>Express Maintenance</h4>
+                    <p>Dedicated app-based ticketing with a 24-hour resolution guarantee.</p>
+                </div>
+
+                <div class="adv-srv-card glass-card">
+                    <div class="adv-srv-icon" style="background:var(--amber-bg); color:var(--amber)"><i
+                            class="fas fa-tint"></i></div>
+                    <h4>RO Drinking Water</h4>
+                    <p>24x7 access to purified hot and cold drinking water.</p>
+                </div>
+
+                <div class="adv-srv-card glass-card">
+                    <div class="adv-srv-icon" style="background:var(--coral-bg); color:var(--coral)"><i
+                            class="fas fa-tshirt"></i></div>
+                    <h4>Laundry Services</h4>
+                    <p>Professional on-site laundry to save your precious time.</p>
+                </div>
+
+                <div class="adv-srv-card glass-card">
+                    <div class="adv-srv-icon" style="background:var(--green-bg); color:var(--green)"><i
+                            class="fas fa-couch"></i></div>
+                    <h4>Fully Furnished</h4>
+                    <p>Premium beds, mattresses, study tables, and spacious wardrobes.</p>
+                </div>
+            </div>
+
+            <!-- Features Banner -->
+            <div class="adv-srv-banner glass-card" data-reveal>
+                <div class="asb-left">
+                    <h3>Focus strictly on your studies. <span>We'll handle the rest.</span></h3>
+                    <p>Join 500+ students already enjoying a zero-brokerage, hassle-free life near LPU.</p>
+                    <a href="#properties" class="btn-primary"
+                        style="display:inline-flex; align-items:center; gap:0.5rem; border-radius:12px; padding:0.8rem 1.5rem;"><i
+                            class="fas fa-search"></i> Find Your Room</a>
+                </div>
+                <div class="asb-right">
+                    <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=600&auto=format&fit=crop"
+                        alt="Student studying in PG" class="asb-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section" style="background:var(--bg-soft)">
+        <div class="sec-container">
+
+            <div class="about-grid-layered">
+                <!-- Text & Features -->
+                <div class="agl-content" data-reveal>
+                    <div class="sec-tag"><i class="fas fa-info-circle"></i> About Us</div>
+                    <h2 class="sec-title">Redefining Student Living at LPU</h2>
+                    <p class="agl-desc">Heaven Rooms is a premium student accommodation service near Lovely Professional
+                        University. We understand that a good living environment is essential for academic success,
+                        which is why we provide safe, highly comfortable, and affordable living spaces tailored strictly
+                        for students.</p>
+
+                    <div class="agl-features">
+                        <div class="agl-feature">
+                            <div class="aglf-icon"><i class="fas fa-shield-alt"></i></div>
+                            <div>
+                                <h5>Safety First</h5>
+                                <p>CCTV & Secure Access</p>
+                            </div>
+                        </div>
+                        <div class="agl-feature">
+                            <div class="aglf-icon"><i class="fas fa-couch"></i></div>
+                            <div>
+                                <h5>Premium Comfort</h5>
+                                <p>Fully furnished spaces</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Layered Images -->
+                <div class="agl-images" data-reveal>
+                    <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=600&auto=format&fit=crop"
+                        class="agl-img-1" alt="Student Room">
+                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=600&auto=format&fit=crop"
+                        class="agl-img-2" alt="Lounge Area">
+                    <div class="agl-badge">
+                        <div class="agl-badge-num">23+</div>
+                        <div class="agl-badge-text">Properties<br>Managed</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Founder & Timeline -->
+            <div class="founder-journey-wrapper" data-reveal>
+                <div class="founder-card glass-card">
+                    <div class="founder-img-col">
+                        <div class="founder-img-wrap">
+                            <img src="javascript/Gemini_Generated_Image_ow0usqow0usqow0u.png" alt="Veer Kuswanshi">
+                        </div>
+                    </div>
+                    <div class="founder-text-col">
+                        <i class="fas fa-quote-left founder-quote-icon"></i>
+                        <p class="founder-quote">"Our mission is to create a home away from home for students, offering
+                            an environment where they can focus completely on their academic growth without worrying
+                            about living conditions."</p>
+                        <h4 class="founder-name">Veer Kuswanshi</h4>
+                        <span class="founder-title">Founder & CEO</span>
+                    </div>
+                </div>
+
+                <div class="timeline-box glass-card">
+                    <h3 style="margin-bottom: 1.5rem; color: var(--text);">Our Growth Journey</h3>
+                    <div class="timeline">
+                        <div class="timeline-step">
+                            <div class="t-year">2024</div>
+                            <div class="t-content"><strong>Founded</strong><br>Started with 2 PGs.</div>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="t-year">2025</div>
+                            <div class="t-content"><strong>Expansion</strong><br>Grew to 16 PGs.</div>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="t-year">2026</div>
+                            <div class="t-content"><strong>Milestone</strong><br>Currently managing 23 PGs.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section">
+        <div class="sec-container">
+            <div class="sec-header" data-reveal>
+                <div class="sec-tag"><i class="fas fa-star"></i> Reviews</div>
+                <h2 class="sec-title">What Tenants Say</h2>
+            </div>
+            <div class="swiper test-slider" data-reveal>
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="test-card glass-card">
+                            <blockquote>"Heaven Rooms has been fantastic. Management is responsive and facilities are
+                                top-notch. Highly recommended!"</blockquote>
+                            <div class="test-author">
+                                <div class="test-avatar">R</div>
+                                <div>
+                                    <div class="test-name">Rohan Sharma</div>
+                                    <div class="test-stars">★★★★★</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="test-card glass-card">
+                            <blockquote>"Safe, comfortable, fast WiFi — perfect for studies. Very convenient location
+                                for LPU students."</blockquote>
+                            <div class="test-author">
+                                <div class="test-avatar">P</div>
+                                <div>
+                                    <div class="test-name">Priya Patel</div>
+                                    <div class="test-stars">★★★★½</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="test-card glass-card">
+                            <blockquote>"Transparent pricing, no hidden charges. Clean, well-maintained rooms. Great
+                                value for money."</blockquote>
+                            <div class="test-author">
+                                <div class="test-avatar">A</div>
+                                <div>
+                                    <div class="test-name">Ankit Kumar</div>
+                                    <div class="test-stars">★★★★★</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="test-card glass-card">
+                            <blockquote>"Amazing rooms with all amenities. Management is very cooperative. Would
+                                definitely recommend!"</blockquote>
+                            <div class="test-author">
+                                <div class="test-avatar">S</div>
+                                <div>
+                                    <div class="test-name">Sneha Gupta</div>
+                                    <div class="test-stars">★★★★★</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <p style="text-align:center;margin-top:1.25rem" data-reveal>
+                <span
+                    style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.35rem 1.1rem;border-radius:var(--radius-full);font-size:0.8rem;font-weight:700;color:var(--green);background:var(--green-bg);border:1px solid rgba(16,185,129,0.15)"><i
+                        class="fab fa-google"></i> 4.8/5 on Google</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section faq-section" style="position:relative; overflow:hidden;">
+        <!-- Background decorative elements -->
+        <div class="faq-blur-circle-1"
+            style="position:absolute; top:-15%; left:-10%; width:600px; height:600px; background:radial-gradient(circle, rgba(255,123,0,0.08) 0%, transparent 70%); border-radius:50%; z-index:0; pointer-events: none;">
+        </div>
+
+        <div class="sec-container" style="position:relative; z-index:1;">
+            <div class="sec-header text-center" data-reveal style="text-align: center; margin-bottom: 3.5rem;">
+                <div class="sec-tag mx-auto"
+                    style="display:inline-flex; align-items:center; gap:0.5rem; background:rgba(255,123,0,0.1); color:var(--primary); padding:0.5rem 1.25rem; border-radius:50px; font-weight:700; font-size:0.85rem; margin-bottom:1rem; border:1px solid rgba(255,123,0,0.2);">
+                    <i class="fas fa-question-circle"></i> FAQ
+                </div>
+                <h2 class="sec-title"
+                    style="font-family:var(--font-display); font-size:2.8rem; background:linear-gradient(135deg, var(--text), var(--primary)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:1rem;">
+                    Frequently Asked Questions</h2>
+            </div>
+
+            <div class="faq-search-wrapper glass-card" data-reveal>
+                <div class="search-input-wrap" style="width: 100%;">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="faq-search"
+                        placeholder="Search for answers (e.g., Deposit, Meals, Guests)...">
+                </div>
+            </div>
+
+            <div id="faq-container" class="faq-list" data-reveal></div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section contact-section" style="position:relative; overflow:hidden;">
+        <!-- Warm amber decorative orbs -->
+        <div
+            style="position:absolute; top:-15%; left:-8%; width:500px; height:500px; background:radial-gradient(circle, rgba(230,126,34,0.08) 0%, transparent 65%); border-radius:50%; z-index:0; pointer-events:none;">
+        </div>
+        <div
+            style="position:absolute; bottom:-15%; right:-8%; width:600px; height:600px; background:radial-gradient(circle, rgba(243,156,18,0.06) 0%, transparent 65%); border-radius:50%; z-index:0; pointer-events:none;">
+        </div>
+
+        <div class="sec-container" style="position:relative; z-index:1;">
+            <div class="sec-header" data-reveal style="text-align:center; margin-bottom:4rem;">
+                <div class="sec-tag" style="margin:0 auto 1rem;">
+                    <i class="fas fa-paper-plane"></i> Get In Touch
+                </div>
+                <h2 class="sec-title">We're Here for You</h2>
+                <p class="sec-desc" style="margin:0 auto; max-width:600px;">
+                    Have questions about pricing, availability, or amenities? Our team is always ready to assist you.
+                </p>
+            </div>
+
+            <!-- Trust Badges Row -->
+            <div class="contact-trust-row" data-reveal
+                style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:1.25rem; margin-bottom:3.5rem;">
+                <div class="trust-badge glass-card"
+                    style="display:flex; align-items:center; gap:1rem; padding:1.25rem 1.5rem; border-radius:var(--radius); transition:all 0.3s ease;">
+                    <div
+                        style="width:48px; height:48px; border-radius:12px; background:linear-gradient(135deg, rgba(39,174,96,0.15), rgba(39,174,96,0.03)); display:flex; align-items:center; justify-content:center; font-size:1.2rem; color:var(--green); border:1px solid rgba(39,174,96,0.2); flex-shrink:0;">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div>
+                        <strong style="font-size:0.95rem; display:block; margin-bottom:2px;">Verified Business</strong>
+                        <span style="font-size:0.8rem; color:var(--text-light);">Google Verified</span>
+                    </div>
+                </div>
+                <div class="trust-badge glass-card"
+                    style="display:flex; align-items:center; gap:1rem; padding:1.25rem 1.5rem; border-radius:var(--radius); transition:all 0.3s ease;">
+                    <div
+                        style="width:48px; height:48px; border-radius:12px; background:linear-gradient(135deg, rgba(230,126,34,0.15), rgba(230,126,34,0.03)); display:flex; align-items:center; justify-content:center; font-size:1.2rem; color:var(--primary); border:1px solid rgba(230,126,34,0.2); flex-shrink:0;">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div>
+                        <strong style="font-size:0.95rem; display:block; margin-bottom:2px;">Instant Reply</strong>
+                        <span style="font-size:0.8rem; color:var(--text-light);">Within 15 minutes</span>
+                    </div>
+                </div>
+                <div class="trust-badge glass-card"
+                    style="display:flex; align-items:center; gap:1rem; padding:1.25rem 1.5rem; border-radius:var(--radius); transition:all 0.3s ease;">
+                    <div
+                        style="width:48px; height:48px; border-radius:12px; background:linear-gradient(135deg, rgba(52,152,219,0.15), rgba(52,152,219,0.03)); display:flex; align-items:center; justify-content:center; font-size:1.2rem; color:#3498DB; border:1px solid rgba(52,152,219,0.2); flex-shrink:0;">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div>
+                        <strong style="font-size:0.95rem; display:block; margin-bottom:2px;">24/7 Support</strong>
+                        <span style="font-size:0.8rem; color:var(--text-light);">Always available</span>
+                    </div>
+                </div>
+                <div class="trust-badge glass-card"
+                    style="display:flex; align-items:center; gap:1rem; padding:1.25rem 1.5rem; border-radius:var(--radius); transition:all 0.3s ease;">
+                    <div
+                        style="width:48px; height:48px; border-radius:12px; background:linear-gradient(135deg, rgba(243,156,18,0.15), rgba(243,156,18,0.03)); display:flex; align-items:center; justify-content:center; font-size:1.2rem; color:var(--amber); border:1px solid rgba(243,156,18,0.2); flex-shrink:0;">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div>
+                        <strong style="font-size:0.95rem; display:block; margin-bottom:2px;">4.8★ Rating</strong>
+                        <span style="font-size:0.8rem; color:var(--text-light);">500+ happy tenants</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-grid-adv" data-reveal>
+                <!-- Left — Info Cards + Map -->
+                <div class="contact-info-col">
+                    <!-- Visit Card -->
+                    <div class="contact-info-card glass-card hover-glow">
+                        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="info-text">
+                            <h4>Visit Our Office</h4>
+                            <p>In front of Oak Residency 1, Law Gate Rd<br>LPU, Phagwara, Punjab 144411</p>
+                        </div>
+                    </div>
+
+                    <!-- Contact Cards Row -->
+                    <div class="contact-cards-row">
+                        <div class="contact-info-card glass-card hover-glow">
+                            <div class="info-icon"><i class="fab fa-whatsapp"></i></div>
+                            <div class="info-text">
+                                <h4>WhatsApp</h4>
+                                <p>+91 91422 72776</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-card glass-card hover-glow">
+                            <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="info-text">
+                                <h4>Email Us</h4>
+                                <p>info@heavenrooms.in</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Working Hours Card -->
+                    <div class="contact-info-card glass-card hover-glow"
+                        style="flex-direction:column; align-items:flex-start;">
+                        <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1rem;">
+                            <div class="info-icon"><i class="fas fa-clock"></i></div>
+                            <h4 style="margin:0; font-size:1.05rem;">Working Hours</h4>
+                        </div>
+                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem 2rem; width:100%;">
+                            <div
+                                style="display:flex; justify-content:space-between; padding:0.5rem 0; border-bottom:1px dashed rgba(0,0,0,0.06);">
+                                <span style="color:var(--text-light); font-size:0.85rem;">Mon - Fri</span>
+                                <span style="font-weight:600; font-size:0.85rem; color:var(--green);">9 AM - 9 PM</span>
+                            </div>
+                            <div
+                                style="display:flex; justify-content:space-between; padding:0.5rem 0; border-bottom:1px dashed rgba(0,0,0,0.06);">
+                                <span style="color:var(--text-light); font-size:0.85rem;">Saturday</span>
+                                <span style="font-weight:600; font-size:0.85rem; color:var(--green);">9 AM - 8 PM</span>
+                            </div>
+                            <div style="display:flex; justify-content:space-between; padding:0.5rem 0;">
+                                <span style="color:var(--text-light); font-size:0.85rem;">Sunday</span>
+                                <span style="font-weight:600; font-size:0.85rem; color:var(--primary);">10 AM - 6
+                                    PM</span>
+                            </div>
+                            <div style="display:flex; justify-content:space-between; padding:0.5rem 0;">
+                                <span style="color:var(--text-light); font-size:0.85rem;">Holidays</span>
+                                <span style="font-weight:600; font-size:0.85rem; color:var(--coral);">By
+                                    Appointment</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Map -->
+                    <div class="map-frame map-frame-modern glass-card"
+                        style="margin-top:1rem; border-radius:var(--radius-lg); overflow:hidden;">
+                        <iframe frameborder="0" scrolling="no" style="width:100%; height:100%; min-height:280px;"
+                            src="https://maps.google.com/maps?width=100%25&height=280&hl=en&q=Heaven+Rooms+Law+Gate+Phagwara+Punjab&t=&z=15&ie=UTF8&iwloc=B&output=embed"></iframe>
+                        <div class="map-overlay"
+                            style="background:linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.7) 100%);">
+                            <a href="https://maps.app.goo.gl/MUEZga441HL6QPnJ7" target="_blank"
+                                class="btn-submit-modern"
+                                style="margin:auto auto 1.5rem; padding:0.9rem 2rem; font-size:0.95rem; font-weight:700; color:white; gap:0.6rem; border-radius:50px;">
+                                <i class="fas fa-directions"></i> Get Directions
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right — Contact Form -->
+                <div class="contact-form-col">
+                    <div class="contact-form-card glass-card" style="padding:2.5rem; border-radius:var(--radius-lg);">
+                        <div style="margin-bottom:2rem;">
+                            <h3
+                                style="font-family:var(--font-display); font-size:2rem; margin-bottom:0.5rem; color:var(--text);">
+                                Send a Message</h3>
+                            <p style="color:var(--text-light); font-size:0.95rem;">Fill out the form below and we will
+                                contact you via WhatsApp shortly.</p>
+                        </div>
+                        <form id="contact-form" class="modern-form">
+                            <div class="form-group-half">
+                                <div class="form-group">
+                                    <label>Full Name</label>
+                                    <div class="input-wrapper">
+                                        <i class="fas fa-user"></i>
+                                        <input type="text" name="name" placeholder="Your full name" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone Number</label>
+                                    <div class="input-wrapper">
+                                        <i class="fas fa-phone"></i>
+                                        <input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group-half">
+                                <div class="form-group">
+                                    <label>Email Address</label>
+                                    <div class="input-wrapper">
+                                        <i class="fas fa-envelope"></i>
+                                        <input type="email" name="email" placeholder="you@example.com">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Preferred Visit Date</label>
+                                    <div class="input-wrapper">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        <input type="date" name="visit-date">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Budget Range</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-rupee-sign"></i>
+                                    <select name="budget"
+                                        style="width:100%; background:transparent; border:none; color:var(--text); font-size:0.95rem; outline:none; font-family:var(--font); padding:0.2rem 0;">
+                                        <option value="">Select your budget</option>
+                                        <option value="under-7k">Under ₹7,000/month</option>
+                                        <option value="7k-10k">₹7,000 - ₹10,000/month</option>
+                                        <option value="above-10k">Above ₹10,000/month</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Your Message / Questions</label>
+                                <div class="input-wrapper text-wrapper">
+                                    <i class="fas fa-comment-alt"></i>
+                                    <textarea name="message" rows="4"
+                                        placeholder="Hi, I'm interested in booking a room near LPU..."></textarea>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn-submit-modern"
+                                style="width:100%; padding:1.2rem; font-size:1.05rem; gap:0.75rem;">
+                                <i class="fab fa-whatsapp" style="font-size:1.35rem;"></i> Send Inquiry via WhatsApp
+                            </button>
+
+                            <p style="text-align:center; margin-top:1rem; font-size:0.8rem; color:var(--text-light);">
+                                <i class="fas fa-lock" style="margin-right:4px;"></i> Your information is secure and
+                                will never be shared.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer class="footer-modern">
+        <div class="footer-inner">
+            <div class="footer-grid-adv" data-reveal>
+                <!-- Brand Col -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="https://i.postimg.cc/52FwvGfv/BA1-F5-A65-42-FD-4-C39-B643-08-F541044-EE3-1-201-a.jpg"
+                            alt="Logo">
+                        <span
+                            style="font-family:var(--font-display);font-size:1.6rem; color: white; letter-spacing:0.5px">Heaven
+                            Rooms</span>
+                    </div>
+                    <p
+                        style="margin-bottom:1.5rem; font-size: 0.95rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+                        Elevating student living with premium, highly-secured, and fully furnished accommodations near
+                        LPU Law Gate.
+                    </p>
+                    <div class="footer-social-adv">
+                        <a href="https://wa.me/919142272776" target="_blank" aria-label="WhatsApp"
+                            style="background:rgba(39, 174, 96, 0.15); border-color:rgba(39, 174, 96, 0.3)"><i
+                                class="fab fa-whatsapp" style="color:#2ecc71"></i></a>
+                        <a href="https://www.instagram.com/heavensrooms_" target="_blank" aria-label="Instagram"
+                            style="background:rgba(225, 48, 108, 0.15); border-color:rgba(225, 48, 108, 0.3)"><i
+                                class="fab fa-instagram" style="color:#e1306c"></i></a>
+                        <a href="tel:+919142272776" aria-label="Phone"
+                            style="background:rgba(52, 152, 219, 0.15); border-color:rgba(52, 152, 219, 0.3)"><i
+                                class="fas fa-phone" style="color:#3498db"></i></a>
+                    </div>
+                </div>
+
+                <!-- Links Col -->
+                <div class="footer-links-col">
+                    <h4>Explore</h4>
+                    <ul class="footer-ul">
+                        <li><a href="#properties"><i class="fas fa-arrow-right text-mini"></i> Premium Rooms</a></li>
+                        <li><a href="#services"><i class="fas fa-arrow-right text-mini"></i> Our Services</a></li>
+                        <li><a href="#about"><i class="fas fa-arrow-right text-mini"></i> About Us</a></li>
+                        <li><a href="#faq"><i class="fas fa-arrow-right text-mini"></i> Help &amp; FAQs</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support Col -->
+                <div class="footer-links-col">
+                    <h4>Support</h4>
+                    <ul class="footer-ul">
+                        <li><a href="maintenance.html" style="color:var(--primary-light); font-weight:600;"><i
+                                    class="fas fa-wrench text-mini"></i> Maintenance Ticket</a></li>
+                        <li><a href="#contact"><i class="fas fa-comment-dots text-mini"></i> Contact Us</a></li>
+                        <li><a href="privacy.html"><i class="fas fa-shield-alt text-mini"></i> Privacy Policy</a></li>
+                        <li><a href="terms.html"><i class="fas fa-file-contract text-mini"></i> Terms of Use</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact & CTA Col -->
+                <div class="footer-links-col footer-contact-col">
+                    <h4>Get In Touch</h4>
+                    <ul class="footer-contact-list" style="margin-bottom: 1.5rem;">
+                        <li>
+                            <div class="fc-icon" style="background:rgba(230, 126, 34, 0.15); color:var(--primary)"><i
+                                    class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <strong>Office Location</strong>
+                                <span style="font-size:0.85rem">Law Gate, LPU, Phagwara, Punjab 144411</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="fc-icon" style="background:rgba(230, 126, 34, 0.15); color:var(--primary)"><i
+                                    class="fas fa-phone-alt"></i></div>
+                            <div>
+                                <strong>Call Us Anytime</strong>
+                                <span><a href="tel:+919142272776"
+                                        style="color:white; font-size:1rem; font-weight:600">+91 91422 72776</a></span>
+                            </div>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/919142272776" target="_blank" class="btn-footer-wa">
+                        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Rating strip -->
+            <div class="footer-rating-strip" data-reveal>
+                <div class="frs-item">
+                    <i class="fas fa-star" style="color:#F59E0B"></i>
+                    <span><strong style="color:white">4.8★</strong> Google Rating</span>
+                </div>
+                <div class="frs-divider"></div>
+                <div class="frs-item">
+                    <i class="fas fa-users" style="color:#60A5FA"></i>
+                    <span><strong style="color:white">500+</strong> Happy Tenants</span>
+                </div>
+                <div class="frs-divider"></div>
+                <div class="frs-item">
+                    <i class="fas fa-home" style="color:#34D399"></i>
+                    <span><strong style="color:white">20+</strong> Premium Properties</span>
+                </div>
+                <div class="frs-divider"></div>
+                <div class="frs-item">
+                    <i class="fas fa-shield-alt" style="color:#A78BFA"></i>
+                    <span><strong style="color:white">100%</strong> Verified &amp; Secure</span>
+                </div>
+            </div>
+
+            <div class="footer-bottom-adv" style="padding-top:2rem; border-top:1px solid rgba(255,255,255,0.08);">
+                <div class="fb-left">
+                    <span style="font-family:var(--font); font-size:0.9rem; color:rgba(255,255,255,0.5);">© <span
+                            id="yr">2025</span> Heaven Rooms. All Rights Reserved.</span>
+                </div>
+                <div class="fb-right" style="font-size:0.9rem;">
+                    <span style="color:rgba(255,255,255,0.5)">Designed &amp; Developed by</span>
+                    <button id="dev-profile-btn" class="dev-credit-btn">
+                        <i class="fas fa-code"></i> Abhishek Singh
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Developer Profile Modal -->
+    <div class="dev-modal-overlay" id="dev-modal">
+        <div class="dev-modal-card">
+            <button class="dev-modal-close" id="dev-modal-close"><i class="fas fa-times"></i></button>
+
+            <!-- Animated Particles -->
+            <div class="dev-particles">
+                <span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+
+            <!-- Profile Header - Centered -->
+            <div class="dev-modal-header">
+                <div class="dev-avatar-wrapper">
+                    <div class="dev-avatar-ring">
+                        <img src="WhatsApp Image 2026-01-27 at 16.45.13.jpeg" alt="Abhishek Singh" class="dev-avatar">
+                        <div class="dev-avatar-glow"></div>
+                        <div class="dev-avatar-orbit"></div>
+                    </div>
+                </div>
+                <h2 class="dev-name">Abhishek Singh</h2>
+                <p class="dev-title"><i class="fas fa-laptop-code"></i> Full-Stack Developer</p>
+                <div class="dev-status-pill"><span class="dev-pulse"></span> Available for Projects</div>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="dev-stats-row">
+                <div class="dev-stat">
+                    <span class="dev-stat-num">1+</span>
+                    <span class="dev-stat-label">Years Exp</span>
+                </div>
+                <div class="dev-stat-divider"></div>
+                <div class="dev-stat">
+                    <span class="dev-stat-num">10+</span>
+                    <span class="dev-stat-label">Projects</span>
+                </div>
+                <div class="dev-stat-divider"></div>
+                <div class="dev-stat">
+                    <span class="dev-stat-num">100%</span>
+                    <span class="dev-stat-label">Success Rate</span>
+                </div>
+            </div>
+
+            <!-- Body -->
+            <div class="dev-modal-body">
+                <div class="dev-bio-card">
+                    <p class="dev-bio">
+                        Passionate full-stack developer specializing in building <strong>premium web experiences</strong>. I architect scalable applications with modern UI/UX design, transforming ideas into intuitive digital realities.
+                    </p>
+                </div>
+
+                <div class="dev-bento-grid">
+                    <div class="dev-bento-item dev-bento-tech">
+                        <h4 class="dev-section-title"><i class="fas fa-layer-group"></i> Core Tech Stack</h4>
+                        <div class="dev-skills-grid">
+                            <span class="dev-skill" style="--delay: 0.05s"><i class="fab fa-react" style="color:#61DAFB"></i> React</span>
+                            <span class="dev-skill" style="--delay: 0.1s"><i class="fab fa-node-js" style="color:#339933"></i> Node.js</span>
+                            <span class="dev-skill" style="--delay: 0.15s"><i class="fab fa-js-square" style="color:#F7DF1E"></i> JavaScript</span>
+                            <span class="dev-skill" style="--delay: 0.2s"><i class="fas fa-database" style="color:#47A248"></i> MongoDB</span>
+                            <span class="dev-skill" style="--delay: 0.25s"><i class="fab fa-html5" style="color:#E34F26"></i> HTML/CSS</span>
+                            <span class="dev-skill" style="--delay: 0.3s"><i class="fab fa-figma" style="color:#F24E1E"></i> UI/UX</span>
+                        </div>
+                    </div>
+
+                    <div class="dev-bento-item dev-bento-project">
+                        <div class="dev-project-badge">
+                            <div class="dev-project-icon"><i class="fas fa-crown"></i></div>
+                            <div>
+                                <strong>Featured Work: Heaven Rooms</strong>
+                                <span>End-to-End Premium Student PG Platform</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Connect Links -->
+                <h4 class="dev-section-title"><i class="fas fa-paper-plane"></i> Let's Connect</h4>
+                <div class="dev-connect-links">
+                    <a href="https://wa.me/918409898626" target="_blank" class="dev-link dev-link-wa">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <a href="mailto:abhisingh11644@gmail.com" class="dev-link dev-link-mail">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                    <a href="https://github.com/Abhi-2636" target="_blank" class="dev-link dev-link-gh">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/abhishek-kumar-797aa7219" target="_blank"
+                        class="dev-link dev-link-li">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div> <audio id="click-sound" src="https://actions.google.com/sounds/v1/ui/click_1.ogg" preload="auto"></audio>
+    <div class="modal-overlay" id="modal">
+        <div class="modal-box">
+            <div class="modal-head">
+                <div id="modal-scroll-bar" class="modal-scroll-bar"></div>
+                <button class="modal-x" id="modal-close"><i class="fas fa-times"></i></button>
+            </div>
+
+            <div class="modal-content-wrap">
+                <div class="modal-gallery-area">
+                    <div class="modal-main-img" id="modal-img"></div>
+                    <div class="modal-img-counter" id="modal-img-counter"><i class="fas fa-image"></i> <span
+                            id="mic-text">1/3</span></div>
+                    <span id="modal-status" class="modal-badge-status"></span>
+                    <div class="modal-thumbs-overlay" id="modal-thumbs"></div>
+                </div>
+
+                <div class="modal-body">
+                    <div class="modal-header-text">
+                        <div class="modal-header-left">
+                            <h3 id="modal-title">Property</h3>
+                            <div class="modal-loc"><i class="fas fa-map-marker-alt" style="color:var(--primary)"></i>
+                                Premium PG Near LPU, Phagwara</div>
+                        </div>
+                        <div class="modal-price-block">
+                            <div id="modal-price" class="modal-price">₹0</div>
+                        </div>
+                    </div>
+
+                    <div class="modal-highlights" id="modal-specs">
+                        <!-- Populated dynamically -->
+                    </div>
+
+                    <!-- Description -->
+                    <div class="modal-section-title"><i class="fas fa-align-left" style="color:var(--primary)"></i>
+                        About This Room</div>
+                    <p id="modal-desc" class="modal-desc"></p>
+
+                    <div class="modal-section-title" style="margin-top: 2rem;"><i class="fas fa-star"
+                            style="color:var(--primary)"></i> Included
+                        Amenities</div>
+                    <ul id="modal-amenities" class="modal-amenities"></ul>
+
+                    <!-- Property Specs Grid -->
+                    <div class="modal-section-title" style="margin-top: 2rem;"><i class="fas fa-info-circle"
+                            style="color:var(--primary)"></i> Property Details</div>
+                    <div class="modal-specs-grid" id="modal-details-grid">
+                        <!-- Populated dynamically -->
+                    </div>
+
+                    <div class="modal-section-title" style="margin-top: 2rem;"><i class="fas fa-map-marked-alt"
+                            style="color:var(--primary)"></i> Nearby Places</div>
+                    <div class="modal-nearby">
+                        <div class="nearby-item">
+                            <div class="nb-icon"><i class="fas fa-university"></i></div>
+                            <div class="nb-text"><strong>LPU Main Gate</strong><span>~5 mins walk</span></div>
+                        </div>
+                        <div class="nearby-item">
+                            <div class="nb-icon"><i class="fas fa-shopping-cart"></i></div>
+                            <div class="nb-text"><strong>Law Gate Market</strong><span>~2 mins walk</span></div>
+                        </div>
+                        <div class="nearby-item">
+                            <div class="nb-icon"><i class="fas fa-utensils"></i></div>
+                            <div class="nb-text"><strong>Restaurants & Cafes</strong><span>~3 mins walk</span></div>
+                        </div>
+                        <div class="nearby-item">
+                            <div class="nb-icon"><i class="fas fa-hospital"></i></div>
+                            <div class="nb-text"><strong>City Hospital</strong><span>~10 mins drive</span></div>
+                        </div>
+                        <div class="nearby-item">
+                            <div class="nb-icon"><i class="fas fa-train"></i></div>
+                            <div class="nb-text"><strong>Phagwara Station</strong><span>~15 mins drive</span></div>
+                        </div>
+                        <div class="nearby-item">
+                            <div class="nb-icon"><i class="fas fa-bus"></i></div>
+                            <div class="nb-text"><strong>Bus Stand</strong><span>~10 mins drive</span></div>
+                        </div>
+                    </div>
+
+                    <!-- House Rules -->
+                    <div class="modal-section-title" style="margin-top: 2rem;"><i class="fas fa-clipboard-list"
+                            style="color:var(--primary)"></i> House Rules</div>
+                    <div class="modal-house-rules">
+                        <div class="hr-rule"><i class="fas fa-smoking-ban"></i> No Smoking</div>
+                        <div class="hr-rule"><i class="fas fa-clock"></i> Visitor Timing: 9 AM – 8 PM</div>
+                        <div class="hr-rule"><i class="fas fa-moon"></i> Quiet Hours after 10 PM</div>
+                        <div class="hr-rule"><i class="fas fa-broom"></i> Keep Common Areas Clean</div>
+                        <div class="hr-rule"><i class="fas fa-id-card"></i> Valid ID Proof Required</div>
+                        <div class="hr-rule"><i class="fas fa-paw"></i> No Pets Allowed</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-quick-form" id="modal-quick-form">
+                <h4 style="margin-bottom:0.75rem; font-size:1.1rem;"><i class="fas fa-bolt"
+                        style="color:var(--amber)"></i> Quick Request Callback</h4>
+                <form id="quick-inquiry-form-modal" style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+                    <input type="text" name="name" placeholder="Your Name" required class="q-input"
+                        style="flex:1; min-width:120px;">
+                    <input type="tel" name="phone" placeholder="Phone Number" required class="q-input"
+                        style="flex:1; min-width:120px;">
+                    <button type="submit" class="btn-primary"
+                        style="flex:1; min-width:120px; white-space:nowrap; border:none; border-radius:12px; font-weight:bold; cursor:pointer;">Call
+                        Me</button>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <div class="mf-text">Or connect directly via WhatsApp:</div>
+                <div class="modal-actions">
+                    <a href="#" id="modal-wa" class="btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    <a href="#" id="modal-schedule" class="btn-schedule"><i class="fas fa-calendar-alt"></i> Visit</a>
+                    <a href="#" id="modal-reel" class="btn-ig" target="_blank"><i class="fab fa-instagram"></i> Tour</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="https://wa.me/919142272776" target="_blank" class="wa-float"><i class="fab fa-whatsapp"></i></a>
+    <button class="back-top-btn" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i
+            class="fas fa-arrow-up"></i></button>
+
+    <div id="toast"><span id="toast-msg"></span></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const SA = ["Fridge", "Air Conditioner", "Water Purifier", "Geyser", "Attached Washroom", "Fully Furnished", "Wardrobe", "Smart TV", "Fast WiFi", "Separate Kitchen"];
+        const P = [
+            { n: "SP Bharghaw 1", r: 12000, s: "Available", vibe: "🔥 Most Popular", rating: 4.9, dist: "2 km (₹20 auto)", floor: "1st Floor", occ: "Double Sharing", gender: "Boys & Girls", deposit: "₹10,000", desc: "Our most popular premium fully-furnished room featuring a comfortable sofa, smart TV, and AC. Located just 2 km from LPU Main Gate (₹20 auto ride), it offers a peaceful environment perfect for focused study and relaxation.", a: [...SA, "Sofa"], img: { room: "https://i.postimg.cc/Ssy17GXq/Whats-App-Image-2025-07-08-at-21-47-42-1.jpg", washroom: "https://i.postimg.cc/qvy1PFy4/Whats-App-Image-2025-07-08-at-21-47-41.jpg", furnished: "https://i.postimg.cc/cJTBZGHy/Whats-App-Image-2025-07-08-at-21-47-42.jpg" }, reel: "https://www.instagram.com/reel/your-reel-id-3/" },
+            { n: "SP Bharghaw 2", r: 11000, s: "Booked", rating: 4.7, dist: "2 km (₹20 auto)", floor: "2nd Floor", occ: "Double Sharing", gender: "Boys & Girls", deposit: "₹10,000", desc: "A spacious and well-ventilated room in the highly sought-after SP Bharghaw complex. Comes with a premium sofa and all modern amenities for a comfortable stay.", a: [...SA, "Sofa"], img: { room: "https://i.postimg.cc/WpJ4qcF2/s-p-bhargav-apartment-2-pg-for-boys-and-girls-maheru-kapurthala-paying-guest-accommodations-o4do79gy.avif", washroom: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop", furnished: "https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=800&auto=format&fit=crop" }, reel: "https://www.instagram.com/reel/your-reel-id-4/" },
+            { n: "SP Bharghaw 3", r: 11000, s: "Available", rating: 4.7, dist: "2 km (₹20 auto)", floor: "3rd Floor", occ: "Double Sharing", gender: "Boys & Girls", deposit: "₹10,000", desc: "Top-floor room in the premium SP Bharghaw complex with excellent cross-ventilation and natural light. Ideal for students who prefer a quiet, elevated space.", a: [...SA, "Sofa"], img: { room: "https://i.postimg.cc/WpJ4qcF2/s-p-bhargav-apartment-2-pg-for-boys-and-girls-maheru-kapurthala-paying-guest-accommodations-o4do79gy.avif", washroom: "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=800&auto=format&fit=crop", furnished: "https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=800&auto=format&fit=crop" }, reel: "https://www.instagram.com/reel/your-reel-id-5/" },
+            { n: "Preet Villa", r: 10000, s: "Filling Fast", rating: 4.6, dist: "2 km (₹20 auto)", floor: "1st Floor", occ: "Double Sharing", gender: "Boys & Girls", deposit: "₹8,000", desc: "A beautifully designed villa-style room with a personal balcony offering a refreshing view. Perfect blend of privacy and community living near LPU.", a: [...SA, "Personal Balcony"], img: { room: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=800&auto=format&fit=crop", washroom: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop", furnished: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=800&auto=format&fit=crop" }, reel: "https://www.instagram.com/reel/DIRw9kuAFjf/" },
+            { n: "IPS Villa", r: 11000, s: "Available", rating: 4.8, dist: "2 km (₹20 auto)", floor: "Ground Floor", occ: "Double Sharing", gender: "Boys", deposit: "₹10,000", desc: "A premium ground-floor villa room with excellent security and a spacious personal balcony. Great for students who value easy access and natural greenery.", a: [...SA, "Personal Balcony"], img: { room: "https://i.postimg.cc/xd7yqyKt/Whats-App-Image-2025-07-08-at-18-22-27.jpg", washroom: "https://i.postimg.cc/DyFQWzXk/Whats-App-Image-2025-07-08-at-18-22-27-1.jpg", furnished: "https://i.postimg.cc/3wy2M4Pp/Whats-App-Image-2025-07-08-at-18-22-26.jpg" }, reel: "https://www.instagram.com/reel/DIeyeBPyots/" },
+            { n: "Ashok PG", r: 6500, s: "Filling Fast", vibe: "💎 Best Value", rating: 4.5, dist: "2 km (₹20 auto)", floor: "1st Floor", occ: "Double Sharing", gender: "Boys", deposit: "₹5,000", desc: "One of the most affordable options near LPU with a private balcony and all essential amenities. Ideal for budget-conscious students who don't want to compromise on comfort.", a: [...SA, "Personal Balcony"], img: { room: "https://i.postimg.cc/527p96jj/Whats-App-Image-2025-07-08-at-02-07-38-1.jpg", washroom: "https://i.postimg.cc/wBnVJZXp/Whats-App-Image-2025-07-08-at-02-07-38.jpg", furnished: "https://i.postimg.cc/029Cppwb/Whats-App-Image-2025-07-08-at-02-07-39.jpg" }, reel: "https://www.instagram.com/reel/DLwcMkOAoLd/" },
+            { n: "VC Apartment", r: 9000, s: "Available", rating: 4.6, dist: "2 km (₹20 auto)", floor: "2nd Floor", occ: "Double Sharing", gender: "Boys & Girls", deposit: "₹8,000", desc: "A modern apartment room with clean interiors and all standard amenities. Centrally located near Law Gate Market, restaurants, and LPU campus.", a: [...SA], img: { room: "https://i.postimg.cc/2SDNd9xn/Whats-App-Image-2025-07-08-at-02-07-36.jpg", washroom: "https://i.postimg.cc/d0VXnbZZ/Whats-App-Image-2025-07-08-at-02-07-37.jpg", furnished: "https://i.postimg.cc/RZMbVkRp/Whats-App-Image-2025-07-08-at-02-07-37-1.jpg" }, reel: "https://www.instagram.com/reel/your-reel-id-12/" },
+            { n: "Sukhman Apartment", r: 9000, s: "Filling Fast", rating: 4.7, dist: "2 km (₹20 auto)", floor: "1st Floor", occ: "Double Sharing", gender: "Boys & Girls", deposit: "₹8,000", desc: "Bright and airy room with a personal balcony in a well-maintained apartment complex. Known for its friendly community and responsive management.", a: [...SA, "Personal Balcony"], img: { room: "https://i.postimg.cc/nrdPfCtK/Whats-App-Image-2025-07-08-at-01-26-22.jpg", furnished: "https://i.postimg.cc/cLTMDV0Y/Whats-App-Image-2025-07-08-at-01-26-22-1.jpg", washroom: "https://i.postimg.cc/4NQzdrKM/Whats-App-Image-2025-07-08-at-01-26-21.jpg" }, reel: "https://www.instagram.com/reel/DL1Q4a_AKB5/" },
+            { n: "Starlight PG", r: 6000, s: "Booked", vibe: "🤫 Quiet Zone", rating: 4.4, dist: "2 km (₹20 auto)", floor: "Ground Floor", occ: "Double Sharing", gender: "Boys", deposit: "₹5,000", desc: "A serene, quiet PG perfect for students who prioritize a peaceful study environment. Fully furnished with all essential amenities at a budget-friendly price.", a: [...SA], img: { room: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?q=80&w=800&auto=format&fit=crop", washroom: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop", furnished: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=800&auto=format&fit=crop" }, reel: "https://www.instagram.com/reel/your-reel-id-8/" },
+            { n: "Ambey Apartment", r: 9500, s: "Available", rating: 4.5, dist: "2 km (₹20 auto)", floor: "2nd Floor", occ: "Double Sharing", gender: "Boys & Girls", deposit: "₹7,000", desc: "A well-maintained apartment with modern furnishing and excellent natural lighting. Close to local markets and eateries, making daily life convenient.", a: [...SA], img: { room: "https://i.postimg.cc/656P0t6z/IMG-4520.jpg", washroom: "https://i.postimg.cc/SRGxpqHD/IMG-4371.jpg", furnished: "https://i.postimg.cc/rpqRdnNd/IMG-4370.jpg" }, reel: "https://www.instagram.com/reel/your-reel-id-16/" },
+            { n: "Ambey Apartment 2", r: 9000, s: "Filling Fast", vibe: "🆕 New Listing", rating: 4.6, dist: "2 km (₹20 auto)", floor: "3rd Floor", occ: "Double Sharing", gender: "Boys & Girls", deposit: "₹8,000", desc: "Newly listed top-floor room in the popular Ambey complex. Features a personal balcony with an open view and all premium amenities included.", a: [...SA, "Personal Balcony"], img: { room: "https://i.postimg.cc/LXfcrLbr/IMG-4166.jpg", washroom: "https://i.postimg.cc/5tQTC8b6/IMG-4167.jpg", furnished: "https://i.postimg.cc/RCL8KS5Q/IMG-4169.jpg" }, reel: "https://www.instagram.com/reel/your-reel-id-17/" },
+            { n: "SKG Apartment", r: 7500, s: "Available", rating: 4.4, dist: "2 km (₹20 auto)", floor: "1st Floor", occ: "Double Sharing", gender: "Boys", deposit: "₹6,000", desc: "A solid mid-range option with all standard amenities and a separate kitchen. Well-suited for students looking for independence and value.", a: [...SA], img: { room: "https://images.unsplash.com/photo-1598928506311-c55f437648f5?q=80&w=800&auto=format&fit=crop", washroom: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop", furnished: "https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=800&auto=format&fit=crop" }, reel: "https://www.instagram.com/reel/your-reel-id-18/" },
+            { n: "Sky Height Apartment", r: 6000, s: "Available", vibe: "🎓 Student Pick", rating: 4.5, dist: "2 km (₹20 auto)", floor: "3rd Floor", occ: "Double Sharing", gender: "Boys & Girls", deposit: "₹5,000", desc: "An elevated apartment offering stunning surroundings and a personal balcony. Popular among students for its affordable pricing and fully furnished rooms.", a: [...SA, "Personal Balcony"], img: { room: "https://i.postimg.cc/3J50H10w/IMG-3894.jpg", washroom: "https://i.postimg.cc/Y2gj8FDB/IMG-3892.jpg", furnished: "https://i.postimg.cc/bJSr7Szb/IMG-3893.jpg" }, reel: "https://www.instagram.com/reel/your-reel-id-15/" },
+            { n: "Gururoop Apartment", r: 8000, s: "Available", rating: 4.5, dist: "2 km (₹20 auto)", floor: "2nd Floor", occ: "Double Sharing", gender: "Boys & Girls", deposit: "₹7,000", desc: "Spacious apartment room with a private balcony and modern furniture. Great connectivity to LPU campus and local amenities.", a: [...SA, "Personal Balcony"], img: { room: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=800&auto=format&fit=crop", washroom: "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=800&auto=format&fit=crop", furnished: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=800&auto=format&fit=crop" }, reel: "https://www.instagram.com/reel/your-reel-id-19/" },
+            { n: "Mahadev PG", r: 5000, s: "Filling Fast", vibe: "💰 Budget Friendly", rating: 4.3, dist: "2 km (₹20 auto)", floor: "Ground Floor", occ: "Double Sharing", gender: "Boys", deposit: "₹4,000", desc: "The most affordable PG near LPU, offering clean rooms with all essential amenities. Perfect for students on a tight budget who need a reliable, safe place to stay.", a: [...SA], img: { room: "https://i.postimg.cc/R0F8tR2t/IMG-8320.jpg", washroom: "https://i.postimg.cc/rm4fGYjD/IMG-8322.jpg", furnished: "https://i.postimg.cc/CxZkfnm1/IMG-8317.jpg" }, reel: "https://www.instagram.com/reel/your-reel-id-10/" },
+            { n: "Shine PG", r: 7000, s: "Available", rating: 4.4, dist: "2 km (₹20 auto)", floor: "1st Floor", occ: "Double Sharing", gender: "Boys & Girls", deposit: "₹6,000", desc: "A bright, cheerful room with a personal balcony and all modern amenities. Well-maintained property with friendly management and regular housekeeping.", a: [...SA, "Personal Balcony"], img: { room: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=800&auto=format&fit=crop", washroom: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop", furnished: "https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=800&auto=format&fit=crop" }, reel: "https://www.instagram.com/reel/DC5KNwXyoDo/" },
+            { n: "Judge Apartment", r: 9500, s: "Available", rating: 4.7, dist: "2 km (₹20 auto)", floor: "2nd Floor", occ: "Double Sharing", gender: "Boys & Girls", deposit: "₹8,000", desc: "A premium apartment with enhanced security features including CCTV surveillance and a personal balcony. Located very close to LPU for maximum convenience.", a: [...SA, "Personal Balcony", "CCTV Surveillance"], img: { room: "https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?q=80&w=800&auto=format&fit=crop", washroom: "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=800&auto=format&fit=crop", furnished: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=800&auto=format&fit=crop" }, reel: "https://www.instagram.com/reel/your-reel-id-20/" },
+            { n: "NS Pariyal Apartment", r: 6500, s: "Available", rating: 4.5, dist: "2 km (₹20 auto)", floor: "1st Floor", occ: "Double Sharing", gender: "Boys & Girls", deposit: "₹5,000", desc: "A comfortable apartment with dedicated parking space and a personal balcony. Great for students with vehicles who need convenient, affordable accommodation.", a: [...SA, "Personal Balcony", "Parking"], img: { room: "https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=800&auto=format&fit=crop", washroom: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop", furnished: "https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=800&auto=format&fit=crop" }, reel: "https://www.instagram.com/reel/your-reel-id-21/" },
+            { n: "Blessing Apartment", r: 11000, s: "Filling Fast", rating: 4.6, dist: "2 km (₹20 auto)", floor: "2nd Floor", occ: "Double Sharing", gender: "Boys & Girls", deposit: "₹10,000", desc: "A high-end apartment with dedicated parking and all premium amenities. Known for its excellent maintenance and modern interiors.", a: [...SA, "Parking"], img: { room: "https://images.unsplash.com/photo-1560185127-6ed189bf02f4?q=80&w=800&auto=format&fit=crop", washroom: "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=800&auto=format&fit=crop", furnished: "https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=800&auto=format&fit=crop" }, reel: "https://www.instagram.com/reel/your-reel-id-22/" },
+            { n: "Comfort Corner", r: 12000, s: "Available", rating: 4.8, dist: "2 km (₹20 auto)", floor: "1st Floor", occ: "Double Sharing", gender: "Boys & Girls", deposit: "₹10,000", desc: "A top-tier premium room equipped with a dedicated study table, perfect for academically focused students. Superior furnishing and closest proximity to LPU campus.", a: [...SA, "Study Table"], img: { room: "https://images.unsplash.com/photo-1505693314120-0d443867891c?q=80&w=800&auto=format&fit=crop", washroom: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop", furnished: "https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=800&auto=format&fit=crop" }, reel: "https://www.instagram.com/reel/your-reel-id-23/" },
+        ];
+        const faqs = [
+            { q: "How do I book a room and what is the process?", a: "Booking is simple and fully digital! First, explore our premium PG listings on this website. Once you find a room you like, click 'Details' and contact us directly via WhatsApp. We will schedule a physical or virtual tour. After you select your room, we require a small security deposit and a signed digital lease agreement to secure your space. The whole process takes less than 24 hours!" },
+            { q: "What amenities are included in the monthly rent?", a: "We believe in a hassle-free student life. Your monthly rent covers your fully-furnished room (bed, mattress, wardrobe, study table), high-speed Wi-Fi (up to 100Mbps), 24/7 RO drinking water, geyser for hot water, and regular housekeeping services. Electricity is billed separately via a sub-meter so you only pay for what you use." },
+            { q: "How secure are Heaven Rooms properties?", a: "Your safety is our absolute highest priority. All our properties feature 24/7 CCTV surveillance covering all entry/exit points and common areas. We have secure digital or biometric locks at the main entrances, and many of our properties have a live-in warden or nighttime security guard. We ensure a completely safe environment for both boys and girls." },
+            { q: "How far are the properties from LPU Main Gate?", a: "All our handpicked properties (like SP Bharghaw, Preet Villa, Comfort Corner) are conveniently located just 2 km from LPU Main Gate. An auto-rickshaw costs only ₹20 to drop you right at the gate. This close proximity means you save both time and money on your daily commute!" },
+            { q: "How do I raise a maintenance issue?", a: "We pride ourselves on our rapid response time. You can submit any maintenance request (plumbing, electrical, Wi-Fi issues, etc.) directly through our dedicated 'Maintenance Request' page on this website. Our in-house technical team usually resolves routine issues within 24 hours." }
+        ];
+        const $ = s => document.querySelector(s), $$ = s => document.querySelectorAll(s);
+        let cF = 'all', cS = 'default', sq = '', wl = JSON.parse(localStorage.getItem('hr-wl') || '[]');
+        function toast(m, e) { const t = $('#toast'), s = $('#toast-msg'); if (!t) return; s.textContent = m; t.style.background = e ? '#EF4444' : '#10B981'; t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 3e3); }
+        function getF() { let f = [...P]; if (sq) f = f.filter(p => p.n.toLowerCase().includes(sq.toLowerCase())); if (cF === 'under7k') f = f.filter(p => p.r < 7e3); else if (cF === '7k-10k') f = f.filter(p => p.r >= 7e3 && p.r <= 1e4); else if (cF === 'above10k') f = f.filter(p => p.r > 1e4); else if (cF === 'available') f = f.filter(p => p.s === 'Available'); if (cS === 'low-high') f.sort((a, b) => a.r - b.r); else if (cS === 'high-low') f.sort((a, b) => b.r - a.r); else if (cS === 'name') f.sort((a, b) => a.n.localeCompare(b.n)); return f; }
+        // Setup filter counts once
+        $('#count-all').textContent = P.length;
+        $('#count-u7k').textContent = P.filter(p => p.r < 7000).length;
+        $('#count-7k10k').textContent = P.filter(p => p.r >= 7000 && p.r <= 10000).length;
+        $('#count-a10k').textContent = P.filter(p => p.r > 10000).length;
+        $('#count-avail').textContent = P.filter(p => p.s === 'Available').length;
+
+        function render() {
+            const pl = $('#property-list'); pl.innerHTML = ''; const fl = getF();
+            $('#no-results').classList.toggle('hidden', fl.length > 0);
+            const countNumBtn = $('#prop-count-num');
+            if (countNumBtn) countNumBtn.textContent = fl.length;
+
+            fl.forEach(p => {
+                const d = document.createElement('div'); d.className = 'pc'; d.setAttribute('data-reveal', '');
+                const bc = p.s === 'Available' ? 'b-avail' : p.s === 'Filling Fast' ? 'b-fill' : 'b-book';
+                const iw = wl.includes(p.n), imgs = Object.values(p.img), tags = [];
+                if (p.vibe) tags.push(`<span class="pc-badge-vibe">${p.vibe}</span>`);
+                if (p.a.includes('Air Conditioner')) tags.push('<span class="pc-tag"><i class="fas fa-snowflake" style="color:#60A5FA"></i>AC</span>');
+                if (p.a.includes('Fast WiFi')) tags.push('<span class="pc-tag"><i class="fas fa-wifi" style="color:#2DD4BF"></i>WiFi</span>');
+                if (p.a.includes('Smart TV')) tags.push('<span class="pc-tag"><i class="fas fa-tv" style="color:#818CF8"></i>TV</span>');
+                if (p.a.includes('Personal Balcony')) tags.push('<span class="pc-tag"><i class="fas fa-door-open" style="color:#F39C12"></i>Balcony</span>');
+                if (p.a.includes('Parking')) tags.push('<span class="pc-tag"><i class="fas fa-car" style="color:#94A3B8"></i>Parking</span>');
+                if (p.a.includes('CCTV Surveillance')) tags.push('<span class="pc-tag"><i class="fas fa-video" style="color:#F87171"></i>CCTV</span>');
+                if (p.a.includes('Study Table')) tags.push('<span class="pc-tag"><i class="fas fa-book-open" style="color:#818CF8"></i>Study</span>');
+                const ex = p.a.length - tags.length; if (ex > 0) tags.push(`<span class="pc-tag">+${ex} more</span>`);
+                const dots = imgs.map((_, j) => `<span class="${j === 0 ? 'on' : ''}"></span>`).join('');
+
+                // Build star rating HTML
+                const fullStars = Math.floor(p.rating);
+                const halfStar = (p.rating % 1) >= 0.3;
+                let starsHtml = '';
+                for (let s = 0; s < fullStars; s++) starsHtml += '<i class="fas fa-star"></i>';
+                if (halfStar) starsHtml += '<i class="fas fa-star-half-alt"></i>';
+                const ratingHtml = `<div class="pc-rating"><span class="pc-stars">${starsHtml}</span><span class="pc-rating-num">${p.rating}</span></div>`;
+
+                // Info row: distance + gender
+                const infoHtml = `<div class="pc-info-row"><span class="pc-info-item"><i class="fas fa-map-marker-alt"></i>${p.dist}</span><span class="pc-info-item"><i class="fas fa-venus-mars"></i>${p.gender}</span></div>`;
+
+                d.innerHTML = `<div class="pc-img"><img src="${p.img.room}" alt="${p.n}" loading="lazy"><span class="pc-badge ${bc}">${p.s}</span><button class="pc-heart ${iw ? 'active' : ''}" onclick="event.stopPropagation();twl('${p.n.replace(/'/g, "\\'")}',this)"><i class="fas fa-heart"></i></button><div class="pc-price pc-price-gradient">₹${p.r.toLocaleString()}<small>/mo</small></div><div class="pc-dots">${dots}</div></div><div class="pc-body"><div class="pc-name">${p.n}</div>${ratingHtml}<div class="pc-tags">${tags.join('')}</div>${infoHtml}<div class="pc-foot"><span><i class="fas fa-images"></i> ${imgs.length} photos</span><span class="pc-foot-pill"><i class="fas fa-check-circle"></i>Zero Brokerage</span><span class="pc-cta" onclick="createRipple(event)">Details <i class="fas fa-arrow-right" style="font-size:.6rem"></i></span></div></div>`;
+                d.onclick = () => openM(p);
+                let hi, hx = 0; const im = d.querySelector('.pc-img img'), ds = d.querySelectorAll('.pc-dots span');
+                d.onmouseenter = () => { hx = 0; hi = setInterval(() => { hx = (hx + 1) % imgs.length; im.src = imgs[hx]; ds.forEach((x, j) => x.classList.toggle('on', j === hx)); }, 1200); };
+                d.onmouseleave = () => { clearInterval(hi); im.src = p.img.room; ds.forEach((x, j) => x.classList.toggle('on', j === 0)); };
+                pl.appendChild(d);
+            });
+            // Stagger animation
+            pl.querySelectorAll('.pc').forEach((c, i) => { c.style.animationDelay = `${i * 0.08}s`; c.classList.add('pc-stagger'); });
+            revealAll();
+        }
+        // Ripple effect for CTA buttons
+        function createRipple(e) { const btn = e.currentTarget; const r = document.createElement('span'); r.className = 'ripple-effect'; const rect = btn.getBoundingClientRect(); r.style.left = (e.clientX - rect.left) + 'px'; r.style.top = (e.clientY - rect.top) + 'px'; btn.appendChild(r); setTimeout(() => r.remove(), 600); }
+        window.twl = function (n, b) { const i = wl.indexOf(n); if (i > -1) { wl.splice(i, 1); b.classList.remove('active'); toast('Removed'); } else { wl.push(n); b.classList.add('active'); toast('Saved ❤️'); } localStorage.setItem('hr-wl', JSON.stringify(wl)); };
+        function openM(p) {
+            const m = $('#modal'); m.classList.add('show'); document.body.style.overflow = 'hidden';
+            $('#modal-title').textContent = p.n;
+            const e = Object.entries(p.img);
+            $('#modal-img').innerHTML = `<a href="${e[0][1]}" data-fancybox="g"><img src="${e[0][1]}" alt="${p.n}"></a>`;
+            const th = $('#modal-thumbs'); th.innerHTML = '';
+
+            const micText = $('#mic-text');
+            if (micText) micText.textContent = `1/${e.length}`;
+
+            e.forEach(([k, v], i) => {
+                const a = document.createElement('a'); a.href = v; a.dataset.fancybox = 'g'; a.dataset.caption = `${p.n} - ${k}`;
+                const img = document.createElement('img'); img.src = v; img.alt = k; if (i === 0) img.className = 'active-thumb';
+                img.onmouseover = () => {
+                    $$('.modal-thumbs-overlay img').forEach(x => x.classList.remove('active-thumb'));
+                    img.classList.add('active-thumb');
+                    $('#modal-img img').src = v;
+                    $('#modal-img a').href = v;
+                    if (micText) micText.textContent = `${i + 1}/${e.length}`;
+                };
+                a.appendChild(img); th.appendChild(a);
+            });
+
+            // Populate highlights/specs row
+            $('#modal-specs').innerHTML = `
+                <div class="m-highlight"><i class="fas fa-bed"></i><div class="mh-text"><small>Room Type</small><span>Fully Furnished</span></div></div>
+                <div class="m-highlight"><i class="fas fa-bolt"></i><div class="mh-text"><small>Electricity</small><span>As per meter</span></div></div>
+                <div class="m-highlight"><i class="fas fa-broom"></i><div class="mh-text"><small>Cleaning</small><span>Included</span></div></div>
+            `;
+
+            // Populate description
+            $('#modal-desc').textContent = p.desc;
+
+            const al = $('#modal-amenities'); al.innerHTML = '';
+            const iM = { 'Air Conditioner': 'fa-snowflake', 'Fast WiFi': 'fa-wifi', 'Smart TV': 'fa-tv', 'Attached Washroom': 'fa-bath', 'Geyser': 'fa-hot-tub', 'Fridge': 'fa-icicles', 'Water Purifier': 'fa-tint', 'Fully Furnished': 'fa-couch', 'Wardrobe': 'fa-box', 'Separate Kitchen': 'fa-utensils', 'Personal Balcony': 'fa-door-open', 'Parking': 'fa-car', 'CCTV Surveillance': 'fa-video', 'Study Table': 'fa-book-open', 'Sofa': 'fa-couch' };
+            p.a.forEach(x => { const li = document.createElement('li'); li.className = 'amenity-card'; li.innerHTML = `<div class="amenity-icon"><i class="fas ${iM[x] || 'fa-check'}"></i></div><span>${x}</span>`; al.appendChild(li); });
+
+            // Populate property details grid
+            $('#modal-details-grid').innerHTML = `
+                <div class="spec-item"><i class="fas fa-venus-mars"></i><strong>Gender</strong><span>${p.gender}</span></div>
+                <div class="spec-item"><i class="fas fa-shield-alt"></i><strong>Deposit</strong><span>${p.deposit}</span></div>
+                <div class="spec-item"><i class="fas fa-map-marker-alt"></i><strong>Distance</strong><span>${p.dist} to Main Gate</span></div>
+                <div class="spec-item"><i class="fas fa-hand-holding-usd"></i><strong>Brokerage</strong><span style="color:var(--green); font-weight:700">Zero ✓</span></div>
+            `;
+
+            // Add scroll progress bar in modal
+            const modalBody = document.querySelector('.modal-body');
+            if (modalBody) { modalBody.onscroll = function () { const st = this.scrollTop, sh = this.scrollHeight - this.clientHeight; const pct = (st / sh) * 100; document.getElementById('modal-scroll-bar').style.width = pct + '%'; }; }
+
+            $('#modal-price').innerHTML = `₹${p.r.toLocaleString()} <span style="font-size:0.4em; color:var(--text-light); font-family:var(--font); font-weight:600; text-transform:uppercase; letter-spacing:1px; vertical-align:middle; background:var(--primary-bg); padding:4px 10px; border-radius:50px;">/ month</span>`;
+            const st = $('#modal-status'); st.textContent = p.s; st.style.background = p.s === 'Available' ? 'var(--green-bg)' : p.s === 'Filling Fast' ? 'var(--amber-bg)' : 'var(--coral-bg)'; st.style.color = p.s === 'Available' ? 'var(--green)' : p.s === 'Filling Fast' ? 'var(--amber)' : 'var(--coral)';
+            $('#modal-wa').href = `https://wa.me/919142272776?text=${encodeURIComponent(`Hi, I'm interested in ${p.n}. Rent: ₹${p.r.toLocaleString()}/month. Please share details.`)}`;
+            $('#modal-schedule').href = `https://wa.me/919142272776?text=${encodeURIComponent(`Hi, I'd like to schedule a visit to ${p.n} (₹${p.r.toLocaleString()}/mo). Please confirm availability and timing.`)}`;
+            $('#modal-reel').href = p.reel;
+        }
+        $('#modal-close').onclick = () => { $('#modal').classList.remove('show'); document.body.style.overflow = ''; };
+        $('#modal').onclick = e => { if (e.target === $('#modal')) { $('#modal').classList.remove('show'); document.body.style.overflow = ''; } };
+
+        // Quick Form Submit
+        const quickFormModal = $('#quick-inquiry-form-modal');
+        if (quickFormModal) {
+            quickFormModal.onsubmit = e => {
+                e.preventDefault();
+                const fd = new FormData(e.target);
+                const m = `Hi, I'm ${fd.get('name')}. Callback at: ${fd.get('phone')}. I'm interested in ${$('#modal-title').textContent}.`;
+                window.open(`https://wa.me/919142272776?text=${encodeURIComponent(m)}`, '_blank');
+                toast('Callback Requested! 📞');
+            };
+        }
+
+        // Search Auto-Suggest
+        const searchInput = $('#search');
+        const searchDropdown = $('#search-dropdown');
+        if (searchInput) {
+            searchInput.oninput = e => {
+                sq = e.target.value;
+                render();
+
+                if (sq.trim().length > 0 && searchDropdown) {
+                    const matches = P.filter(p => p.n.toLowerCase().includes(sq.toLowerCase()) || p.desc.toLowerCase().includes(sq.toLowerCase())).slice(0, 5);
+                    if (matches.length > 0) {
+                        searchDropdown.innerHTML = matches.map(m => `<div class="search-dropdown-item" onclick="document.getElementById('search').value='${m.n}'; document.getElementById('search').dispatchEvent(new Event('input')); document.getElementById('search-dropdown').classList.add('hidden');"><i class="fas fa-building" style="color:var(--primary)"></i> <span>${m.n}</span><small style="margin-left:auto;color:var(--text-light)">₹${m.r}</small></div>`).join('');
+                        searchDropdown.classList.remove('hidden');
+                    } else {
+                        searchDropdown.classList.add('hidden');
+                    }
+                } else if (searchDropdown) {
+                    searchDropdown.classList.add('hidden');
+                }
+            };
+            document.addEventListener('click', e => { if (!e.target.closest('.search-input-wrap') && searchDropdown) searchDropdown.classList.add('hidden'); });
+        }
+
+        // UI Sounds
+        const uiSound = $('#click-sound');
+        document.body.addEventListener('click', e => {
+            if (e.target.closest('button') || e.target.closest('.pc-cta') || e.target.closest('.nav-links a') || e.target.closest('.search-dropdown-item') || e.target.closest('.fb') || e.target.closest('.theme-toggle')) {
+                if (uiSound && typeof uiSound.play === "function") { uiSound.currentTime = 0; uiSound.play().catch(() => { }); }
+            }
+        });
+        $$('.fb').forEach(b => b.onclick = () => { $$('.fb').forEach(x => x.classList.remove('active')); b.classList.add('active'); cF = b.dataset.filter; render(); });
+        $('#sort-select').onchange = function () { cS = this.value; render(); };
+        const fc = $('#faq-container'); faqs.forEach(f => { const d = document.createElement('div'); d.className = 'faq-item'; d.innerHTML = `<div class="faq-q"><span>${f.q}</span><i class="fas fa-chevron-down"></i></div><div class="faq-a"><p>${f.a}</p></div>`; fc.appendChild(d); });
+        fc.onclick = e => { const q = e.target.closest('.faq-q'); if (!q) return; const a = q.nextElementSibling, ic = q.querySelector('i'); const o = a.style.maxHeight && a.style.maxHeight !== '0px'; $$('.faq-a').forEach(x => x.style.maxHeight = null); $$('.faq-q i').forEach(x => x.style.transform = ''); if (!o) { a.style.maxHeight = a.scrollHeight + 'px'; ic.style.transform = 'rotate(180deg)'; } };
+        // FAQ Search Logic
+        const faqSearchInput = document.getElementById('faq-search');
+        if (faqSearchInput) {
+            faqSearchInput.addEventListener('input', (e) => {
+                const query = e.target.value.toLowerCase();
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    const question = item.querySelector('.faq-q span').textContent.toLowerCase();
+                    const answer = item.querySelector('.faq-a p').textContent.toLowerCase();
+                    if (question.includes(query) || answer.includes(query)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        }
+
+        $('#contact-form').onsubmit = e => { e.preventDefault(); const fd = new FormData(e.target); let m = `Hi, I'm ${fd.get('name')}. Phone: ${fd.get('phone')}.`; if (fd.get('visit-date')) m += ` Visit: ${fd.get('visit-date')}.`; if (fd.get('message')) m += ` ${fd.get('message')}`; window.open(`https://wa.me/919142272776?text=${encodeURIComponent(m)}`, '_blank'); e.target.reset(); toast('Inquiry sent!'); };
+        const ham = $('#hamburger'), mn = $('#mobile-nav'); ham.onclick = () => { ham.classList.toggle('active'); mn.classList.toggle('active'); document.body.style.overflow = mn.classList.contains('active') ? 'hidden' : ''; };
+        $$('.mobile-nav a:not(.mobile-socials a)').forEach(l => l.onclick = () => { ham.classList.remove('active'); mn.classList.remove('active'); document.body.style.overflow = ''; });
+        let sr = false; function animS() { if (sr) return; sr = true; $$('.stat-val').forEach(el => { const t = +el.dataset.target, sf = el.dataset.suffix || '+'; let c = 0; const st = Math.ceil(t / 40); const ti = setInterval(() => { c += st; if (c >= t) { c = t; clearInterval(ti); el.textContent = t + sf; } else el.textContent = c; }, 30); }); }
+        const so = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) animS(); }), { threshold: .3 }); $$('.stat-val').forEach(el => so.observe(el));
+        window.onscroll = () => { $('#header').classList.toggle('scrolled', scrollY > 50); $('#btt').classList.toggle('show', scrollY > 600); let cur = ''; $$('section[id]').forEach(s => { const r = s.getBoundingClientRect(); if (r.top <= 200 && r.bottom > 200) cur = s.id; }); $$('.nav-links a').forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + cur)); };
+        function revealAll() { const o = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) { x.target.classList.add('visible'); o.unobserve(x.target); } }), { threshold: .08 }); $$('[data-reveal]:not(.visible)').forEach(el => o.observe(el)); }
+        render(); revealAll(); Fancybox.bind("[data-fancybox]", {});
+        const y = $('#yr'); if (y) y.textContent = new Date().getFullYear();
+        window.onload = () => { setTimeout(() => { $('#preloader').classList.add('hidden'); setTimeout(revealAll, 500); }, 1200); };
+        setTimeout(() => $('#preloader').classList.add('hidden'), 4e3);
+
+        // --- NEW UX LOGIC ---
+        // Dark Mode
+        const themeToggles = [$('#theme-toggle'), $('#mobile-theme-toggle')];
+        const rootHtml = document.documentElement;
+
+        function updateToggleIcons(isDark) {
+            themeToggles.forEach(t => {
+                if (t) t.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+            });
+        }
+
+        if (localStorage.getItem('theme') === 'dark') {
+            rootHtml.setAttribute('data-theme', 'dark');
+            updateToggleIcons(true);
+        }
+
+        themeToggles.forEach(btn => {
+            if (!btn) return;
+            btn.onclick = (e) => {
+                e.preventDefault();
+                if (rootHtml.getAttribute('data-theme') === 'dark') {
+                    rootHtml.removeAttribute('data-theme');
+                    localStorage.setItem('theme', 'light');
+                    updateToggleIcons(false);
+                } else {
+                    rootHtml.setAttribute('data-theme', 'dark');
+                    localStorage.setItem('theme', 'dark');
+                    updateToggleIcons(true);
+                }
+            };
+        });
+
+        // Custom Cursor
+        const cursor = $('.cursor');
+        const follower = $('.cursor-follower');
+        let posX = 0, posY = 0, mouseX = 0, mouseY = 0;
+        document.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; });
+        setInterval(() => {
+            posX += (mouseX - posX) / 6;
+            posY += (mouseY - posY) / 6;
+            if (cursor) { cursor.style.left = mouseX + 'px'; cursor.style.top = mouseY + 'px'; }
+            if (follower) { follower.style.left = posX + 'px'; follower.style.top = posY + 'px'; }
+        }, 16);
+        document.body.addEventListener('mouseover', e => {
+            if (e.target.closest('a') || e.target.closest('button') || e.target.closest('.pc')) {
+                cursor.classList.add('hover'); follower.classList.add('hover');
+            }
+        });
+        document.body.addEventListener('mouseout', () => {
+            cursor.classList.remove('hover'); follower.classList.remove('hover');
+        });
+
+        // Scroll Progress
+        window.addEventListener('scroll', () => {
+            const h = document.documentElement;
+            const scrollPx = h.scrollTop || document.body.scrollTop;
+            const winHeightPx = h.scrollHeight - h.clientHeight;
+            const scrolled = (scrollPx / winHeightPx) * 100;
+            $('#scroll-progress').style.width = scrolled + '%';
+        });
+
+        // Hero Search Logic
+        const heroSearch = document.getElementById('hero-quick-search');
+        if (heroSearch) {
+            heroSearch.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    const searchInput = document.getElementById('search');
+                    searchInput.value = e.target.value;
+                    sq = e.target.value;
+                    render();
+                    document.getElementById('properties').scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        }
+
+        // Testimonial Swiper Init
+        new Swiper('.test-slider', {
+            loop: true,
+            slidesPerView: 1,
+            spaceBetween: 20,
+            autoplay: { delay: 4000, disableOnInteraction: false },
+            pagination: { el: '.swiper-pagination', clickable: true },
+            breakpoints: { 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }
+        });
+
+        // FOMO Toast
+        const fomoMsgs = [
+            "Someone just booked SP Bharghaw 1!",
+            "3 people are currently viewing Ashok PG.",
+            "Preet Villa only has 2 beds left!",
+            "Sneha just scheduled a visit to Comfort Corner.",
+            "A student from LPU just booked Mahadev PG!"
+        ];
+        setInterval(() => {
+            if (Math.random() > 0.4) {
+                $('#fomo-msg').textContent = fomoMsgs[Math.floor(Math.random() * fomoMsgs.length)];
+                $('#fomo-toast').classList.add('show');
+                setTimeout(() => $('#fomo-toast').classList.remove('show'), 6000);
+            }
+        }, 15000); // Trigger every 15s randomly
+
+        // Developer Profile Modal
+        const devBtn = $('#dev-profile-btn');
+        const devModal = $('#dev-modal');
+        const devClose = $('#dev-modal-close');
+        if (devBtn && devModal) {
+            devBtn.onclick = () => devModal.classList.add('show');
+            devClose.onclick = () => devModal.classList.remove('show');
+            devModal.onclick = (e) => { if (e.target === devModal) devModal.classList.remove('show'); };
+        }
+
+        // --- NEW PREMIUM UI/UX EFFECTS ---
+
+        // 1. Lenis Smooth Scrolling
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            mouseMultiplier: 1,
+            smoothTouch: false,
+            touchMultiplier: 2,
+            infinite: false,
+        });
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // 2. Spotlight Tracking Effect
+        const spotlightCards = document.querySelectorAll('.adv-srv-card, .pc-card, .test-card');
+        spotlightCards.forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--x', `${x}px`);
+                card.style.setProperty('--y', `${y}px`);
+            });
+        });
+
+        // 3. Magnetic Hover Effect for Buttons
+        const magneticElements = document.querySelectorAll('.btn-primary, .wa-float, .back-top-btn, .dev-credit-btn');
+        magneticElements.forEach(btn => {
+            // Store original transition
+            const originalTransition = window.getComputedStyle(btn).transition;
+
+            btn.addEventListener('mousemove', e => {
+                const rect = btn.getBoundingClientRect();
+                const h = rect.width / 2;
+                const x = e.clientX - rect.left - h;
+                const y = e.clientY - rect.top - rect.height / 2;
+
+                // Remove transition while moving for instant tracking
+                btn.style.transition = 'none';
+                btn.style.transform = `translate(${x * 0.25}px, ${y * 0.25}px)`;
+            });
+
+            btn.addEventListener('mouseleave', () => {
+                // Restore transition for smooth snap back
+                btn.style.transition = 'transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                btn.style.transform = 'translate(0px, 0px)';
+
+                // Clear the temporary transition style after returning
+                setTimeout(() => {
+                    btn.style.transition = '';
+                }, 400);
+            });
+        });
+
+    </script>
+    <!-- Smooth Scroll Library -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+</body>
+
+</html>

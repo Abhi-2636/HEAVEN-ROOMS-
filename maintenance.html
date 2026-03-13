@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance Request - Heaven Rooms</title>
+    <meta name="description"
+        content="Submit a maintenance request for your Heaven Rooms PG accommodation. Our team will resolve issues quickly.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style>
+        :root {
+            --heading-font: 'Cormorant Garamond', serif;
+            --body-font: 'Poppins', sans-serif;
+            --accent-gold: #D97706;
+            --accent-gold-light: #F59E0B;
+            --accent-teal: #0D9488;
+        }
+
+        body {
+            font-family: var(--body-font);
+            scroll-behavior: smooth;
+            background: linear-gradient(135deg, #FFFBF0 0%, #FFF7ED 100%);
+            min-height: 100vh;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--heading-font);
+        }
+
+        /* Brand */
+        .brand-text {
+            background: linear-gradient(135deg, #D97706, #92400E);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 3px;
+        }
+
+        .brand-tagline {
+            font-size: 0.65rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #0D9488;
+            font-weight: 600;
+        }
+
+        /* Off-Canvas Menu */
+        #menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            z-index: 998;
+        }
+
+        #offcanvas-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 100%;
+            background-color: white;
+            box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body.menu-open #menu-overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        body.menu-open #offcanvas-menu {
+            transform: translateX(0);
+        }
+
+        /* Step wizard */
+        .step-indicator {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .step-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #e5e7eb;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .step-dot.active {
+            background: var(--accent-gold);
+            box-shadow: 0 0 0 4px rgba(217, 119, 6, 0.2);
+            transform: scale(1.2);
+        }
+
+        .step-dot.completed {
+            background: var(--accent-teal);
+        }
+
+        .step-line {
+            width: 50px;
+            height: 2px;
+            background: #e5e7eb;
+            align-self: center;
+            transition: background 0.4s ease;
+        }
+
+        .step-line.completed {
+            background: var(--accent-teal);
+        }
+
+        .form-step {
+            display: none;
+            animation: fadeSlideIn 0.4s ease forwards;
+        }
+
+        .form-step.active {
+            display: block;
+        }
+
+        @keyframes fadeSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Category card selection */
+        .category-card {
+            border: 2px solid #e5e7eb;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .category-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px -5px rgba(217, 119, 6, 0.15);
+        }
+
+        .category-card.selected {
+            border-color: var(--accent-gold);
+            background: linear-gradient(135deg, #FFFBEB, #FEF3C7);
+            box-shadow: 0 8px 25px -5px rgba(217, 119, 6, 0.2);
+        }
+
+        .category-card i {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        /* Urgency selector */
+        .urgency-option {
+            border: 2px solid #e5e7eb;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .urgency-option:hover {
+            transform: translateY(-2px);
+        }
+
+        .urgency-option.selected-low {
+            border-color: #22c55e;
+            background: #f0fdf4;
+        }
+
+        .urgency-option.selected-medium {
+            border-color: #f59e0b;
+            background: #fffbeb;
+        }
+
+        .urgency-option.selected-high {
+            border-color: #ef4444;
+            background: #fef2f2;
+        }
+
+        /* CTA glow */
+        .cta-glow {
+            background: linear-gradient(135deg, #D97706, #F59E0B);
+            box-shadow: 0 4px 20px rgba(217, 119, 6, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .cta-glow:hover {
+            box-shadow: 0 6px 30px rgba(217, 119, 6, 0.6);
+            transform: translateY(-2px);
+        }
+
+        /* Success animation */
+        .success-checkmark {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            animation: scaleIn 0.5s ease;
+        }
+
+        @keyframes scaleIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            60% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* How it works */
+        .how-step {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .how-step-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Input transitions */
+        .form-input {
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-input:focus {
+            border-color: var(--accent-gold) !important;
+            box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.1) !important;
+        }
+
+        /* Mobile */
+        @media (max-width: 640px) {
+            .category-card {
+                padding: 1rem;
+            }
+
+            .category-card i {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Custom Cursor */
+        .cursor {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 10000;
+            transform: translate(-50%, -50%);
+            transition: transform 0.2s;
+        }
+
+        .cursor-follower {
+            width: 30px;
+            height: 30px;
+            border: 2px solid rgba(217, 119, 6, 0.5);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s, width 0.3s, height 0.3s, background 0.3s;
+        }
+
+        .cursor.hover {
+            transform: translate(-50%, -50%) scale(0);
+        }
+
+        .cursor-follower.hover {
+            width: 50px;
+            height: 50px;
+            background: rgba(217, 119, 6, 0.1);
+            border-color: transparent;
+        }
+
+        @media (max-width: 1024px) {
+
+            .cursor,
+            .cursor-follower {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen">
+    <div id="scroll-progress"
+        style="position:fixed;top:0;left:0;height:3px;background:var(--accent-gold);z-index:9999;transition:width 0.1s;width:0;">
+    </div>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <header class="bg-white/90 backdrop-blur-md shadow-md sticky top-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <!-- Logo area -->
+            <a href="index.html" class="flex items-center space-x-3 group">
+                <img src="https://i.postimg.cc/52FwvGfv/BA1-F5-A65-42-FD-4-C39-B643-08-F541044-EE3-1-201-a.jpg"
+                    alt="Heaven Rooms Logo"
+                    class="h-12 w-12 rounded-lg object-cover shadow-sm group-hover:shadow-md transition">
+                <div class="flex flex-col">
+                    <h1 class="text-2xl font-bold text-gray-900 leading-none"
+                        style="font-family: var(--heading-font); letter-spacing: 0.5px;">Heaven Rooms</h1>
+                    <span class="text-[0.65rem] text-amber-600 font-medium uppercase tracking-wider mt-1">Enjoy Your
+                        Stay</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex items-center gap-7">
+                <a href="index.html#properties"
+                    class="text-[0.95rem] font-semibold text-gray-700 hover:text-amber-600 transition tracking-wide">Properties</a>
+                <a href="index.html#services"
+                    class="text-[0.95rem] font-semibold text-gray-700 hover:text-amber-600 transition tracking-wide">Services</a>
+                <a href="index.html#about"
+                    class="text-[0.95rem] font-semibold text-gray-700 hover:text-amber-600 transition tracking-wide">About</a>
+                <a href="index.html#faq"
+                    class="text-[0.95rem] font-semibold text-gray-700 hover:text-amber-600 transition tracking-wide">FAQ</a>
+                <a href="maintenance.html"
+                    class="text-[0.95rem] font-bold text-amber-600 border-b-2 border-amber-600 pb-1 transition tracking-wide">Maintenance</a>
+                <a href="index.html#contact"
+                    class="flex items-center gap-2 bg-gradient-to-r from-green-500 to-green-600 text-white px-5 py-2.5 rounded-full text-[0.95rem] font-bold shadow-lg shadow-green-500/30 hover:shadow-green-500/50 hover:-translate-y-0.5 transition ml-2">
+                    <i class="fab fa-whatsapp"></i> Contact
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="hamburger-button"
+                class="md:hidden text-gray-800 focus:outline-none hover:text-amber-600 transition">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+    </header>
+
+    <div id="menu-overlay"></div>
+    <div id="offcanvas-menu">
+        <div class="p-6 flex justify-end">
+            <button id="close-menu-button" class="text-gray-600 hover:text-black text-3xl">&times;</button>
+        </div>
+        <nav class="flex flex-col items-center justify-center h-full space-y-4">
+            <a href="index.html" class="menu-link text-2xl text-gray-700 hover:text-amber-600">Home</a>
+            <a href="index.html#properties" class="menu-link text-2xl text-gray-700 hover:text-amber-600">Properties</a>
+            <a href="index.html#services" class="menu-link text-2xl text-gray-700 hover:text-amber-600">Services</a>
+            <a href="index.html#about" class="menu-link text-2xl text-gray-700 hover:text-amber-600">About</a>
+            <a href="index.html#faq" class="menu-link text-2xl text-gray-700 hover:text-amber-600">FAQ</a>
+            <a href="maintenance.html" class="menu-link text-2xl text-amber-600 font-bold">Maintenance</a>
+            <a href="index.html#contact" class="menu-link text-2xl text-gray-700 hover:text-amber-600">Contact Us</a>
+        </nav>
+    </div>
+
+    <main class="flex-grow">
+        <!-- How It Works -->
+        <section class="py-12" style="background: linear-gradient(135deg, #0c1222 0%, #1a2744 100%);">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-2" data-aos="fade-up">Report an
+                    Issue</h2>
+                <p class="text-gray-400 text-center mb-10" data-aos="fade-up" data-aos-delay="100">Quick. Easy. Resolved
+                    within hours.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <div class="how-step">
+                        <div class="how-step-icon" style="background: rgba(217,119,6,0.15);"><i
+                                class="fas fa-edit text-amber-400"></i></div>
+                        <h4 class="font-bold text-white mb-1" style="font-family: var(--body-font);">1. Fill the Form
+                        </h4>
+                        <p class="text-gray-400 text-sm">Tell us what's wrong in your room</p>
+                    </div>
+                    <div class="how-step">
+                        <div class="how-step-icon" style="background: rgba(13,148,136,0.15);"><i
+                                class="fab fa-whatsapp text-teal-400"></i></div>
+                        <h4 class="font-bold text-white mb-1" style="font-family: var(--body-font);">2. Sent via
+                            WhatsApp</h4>
+                        <p class="text-gray-400 text-sm">Your request reaches us instantly</p>
+                    </div>
+                    <div class="how-step">
+                        <div class="how-step-icon" style="background: rgba(34,197,94,0.15);"><i
+                                class="fas fa-check-circle text-green-400"></i></div>
+                        <h4 class="font-bold text-white mb-1" style="font-family: var(--body-font);">3. Issue Resolved
+                        </h4>
+                        <p class="text-gray-400 text-sm">Our team fixes it within hours</p>
+                    </div>
+                </div>
+                <div class="text-center mt-8" data-aos="fade-up" data-aos-delay="300">
+                    <span
+                        class="inline-flex items-center gap-2 bg-teal-900 text-teal-300 px-4 py-2 rounded-full text-sm font-medium">
+                        <i class="fas fa-check-circle"></i> 50+ requests resolved this month
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Form section -->
+        <section class="py-16">
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="max-w-2xl mx-auto bg-white/80 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/50 overflow-hidden"
+                    data-aos="fade-up">
+                    <!-- Emergency CTA -->
+                    <div class="bg-red-50 border-b border-red-100 px-6 py-3 flex items-center justify-between">
+                        <span class="text-red-700 font-medium text-sm"><i
+                                class="fas fa-exclamation-triangle mr-2"></i>Urgent issue? Call us directly</span>
+                        <a href="tel:+919142272776"
+                            class="bg-red-500 text-white text-sm font-bold px-4 py-1.5 rounded-full hover:bg-red-600 transition-all"><i
+                                class="fas fa-phone mr-1"></i> Call Now</a>
+                    </div>
+
+                    <div class="p-6 md:p-8">
+                        <!-- Step Indicator -->
+                        <div class="step-indicator">
+                            <div class="step-dot active" id="dot-1"></div>
+                            <div class="step-line" id="line-1"></div>
+                            <div class="step-dot" id="dot-2"></div>
+                            <div class="step-line" id="line-2"></div>
+                            <div class="step-dot" id="dot-3"></div>
+                        </div>
+                        <div id="step-label" class="text-center mb-6">
+                            <h3 class="text-xl font-bold text-gray-800" style="font-family: var(--body-font);">Step 1:
+                                Your Details</h3>
+                        </div>
+
+                        <form id="maintenance-form">
+                            <!-- Step 1: Personal info -->
+                            <div class="form-step active" id="step-1">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
+                                    <div>
+                                        <label for="tenant-name"
+                                            class="block text-gray-700 font-semibold mb-2 text-sm">Full Name</label>
+                                        <input type="text" id="tenant-name" name="tenant-name"
+                                            placeholder="Enter your full name"
+                                            class="form-input w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none text-sm"
+                                            required>
+                                    </div>
+                                    <div>
+                                        <label for="tenant-phone"
+                                            class="block text-gray-700 font-semibold mb-2 text-sm">Phone Number</label>
+                                        <input type="tel" id="tenant-phone" name="tenant-phone"
+                                            placeholder="+91 XXXXX XXXXX"
+                                            class="form-input w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none text-sm"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
+                                    <div>
+                                        <label for="pg-name" class="block text-gray-700 font-semibold mb-2 text-sm">PG
+                                            Name</label>
+                                        <select id="pg-name" name="pg-name"
+                                            class="form-input w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none text-sm cursor-pointer"
+                                            required>
+                                            <option value="">Select your PG</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="room-number"
+                                            class="block text-gray-700 font-semibold mb-2 text-sm">Room Number</label>
+                                        <input type="text" id="room-number" name="room-number" placeholder="e.g., 201"
+                                            class="form-input w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none text-sm"
+                                            required>
+                                    </div>
+                                </div>
+                                <button type="button" onclick="nextStep(2)"
+                                    class="w-full cta-glow text-white font-bold py-3 px-8 rounded-xl flex items-center justify-center gap-2">
+                                    Next: Select Issue <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+
+                            <!-- Step 2: Issue details -->
+                            <div class="form-step" id="step-2">
+                                <p class="text-gray-600 mb-4 text-sm text-center">What type of issue are you facing?</p>
+                                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6" id="category-grid">
+                                    <div class="category-card" data-category="Electrical"
+                                        onclick="selectCategory(this)">
+                                        <i class="fas fa-bolt text-amber-500"></i>
+                                        <span class="text-sm font-medium text-gray-700">Electrical</span>
+                                    </div>
+                                    <div class="category-card" data-category="Plumbing" onclick="selectCategory(this)">
+                                        <i class="fas fa-faucet text-blue-500"></i>
+                                        <span class="text-sm font-medium text-gray-700">Plumbing</span>
+                                    </div>
+                                    <div class="category-card" data-category="Internet/Wi-Fi"
+                                        onclick="selectCategory(this)">
+                                        <i class="fas fa-wifi text-teal-500"></i>
+                                        <span class="text-sm font-medium text-gray-700">Internet</span>
+                                    </div>
+                                    <div class="category-card" data-category="Furniture" onclick="selectCategory(this)">
+                                        <i class="fas fa-couch text-purple-500"></i>
+                                        <span class="text-sm font-medium text-gray-700">Furniture</span>
+                                    </div>
+                                    <div class="category-card" data-category="Appliance" onclick="selectCategory(this)">
+                                        <i class="fas fa-snowflake text-cyan-500"></i>
+                                        <span class="text-sm font-medium text-gray-700">Appliance</span>
+                                    </div>
+                                    <div class="category-card" data-category="Other" onclick="selectCategory(this)">
+                                        <i class="fas fa-ellipsis-h text-gray-500"></i>
+                                        <span class="text-sm font-medium text-gray-700">Other</span>
+                                    </div>
+                                </div>
+                                <input type="hidden" id="issue-category" name="issue-category" required>
+
+                                <p class="text-gray-600 mb-3 text-sm text-center">How urgent is this?</p>
+                                <div class="grid grid-cols-3 gap-3 mb-6" id="urgency-grid">
+                                    <div class="urgency-option" data-urgency="Low" onclick="selectUrgency(this)">
+                                        <i class="fas fa-leaf text-green-500 text-lg mb-1"></i>
+                                        <p class="font-semibold text-sm text-gray-700">Low</p>
+                                        <p class="text-xs text-gray-400">Not urgent</p>
+                                    </div>
+                                    <div class="urgency-option" data-urgency="Medium" onclick="selectUrgency(this)">
+                                        <i class="fas fa-exclamation-circle text-amber-500 text-lg mb-1"></i>
+                                        <p class="font-semibold text-sm text-gray-700">Medium</p>
+                                        <p class="text-xs text-gray-400">Important</p>
+                                    </div>
+                                    <div class="urgency-option" data-urgency="High" onclick="selectUrgency(this)">
+                                        <i class="fas fa-fire text-red-500 text-lg mb-1"></i>
+                                        <p class="font-semibold text-sm text-gray-700">High</p>
+                                        <p class="text-xs text-gray-400">Urgent!</p>
+                                    </div>
+                                </div>
+                                <input type="hidden" id="urgency-level" name="urgency-level" required>
+
+                                <div class="flex gap-3">
+                                    <button type="button" onclick="prevStep(1)"
+                                        class="flex-1 border-2 border-gray-200 text-gray-600 font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">
+                                        <i class="fas fa-arrow-left mr-1"></i> Back
+                                    </button>
+                                    <button type="button" onclick="nextStep(3)"
+                                        class="flex-1 cta-glow text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2">
+                                        Next <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Step 3: Description & timing -->
+                            <div class="form-step" id="step-3">
+                                <div class="mb-5">
+                                    <label class="block text-gray-700 font-semibold mb-2 text-sm">Preferred
+                                        Timing</label>
+                                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                                        <label
+                                            class="flex items-center gap-2 p-2 border border-gray-200 rounded-lg hover:border-amber-300 cursor-pointer transition-all text-sm">
+                                            <input type="checkbox" name="timing" value="09 AM - 12 PM"
+                                                class="accent-amber-500"> 09-12 PM
+                                        </label>
+                                        <label
+                                            class="flex items-center gap-2 p-2 border border-gray-200 rounded-lg hover:border-amber-300 cursor-pointer transition-all text-sm">
+                                            <input type="checkbox" name="timing" value="12 PM - 03 PM"
+                                                class="accent-amber-500"> 12-03 PM
+                                        </label>
+                                        <label
+                                            class="flex items-center gap-2 p-2 border border-gray-200 rounded-lg hover:border-amber-300 cursor-pointer transition-all text-sm">
+                                            <input type="checkbox" name="timing" value="03 PM - 06 PM"
+                                                class="accent-amber-500"> 03-06 PM
+                                        </label>
+                                        <label
+                                            class="flex items-center gap-2 p-2 border border-gray-200 rounded-lg hover:border-amber-300 cursor-pointer transition-all text-sm">
+                                            <input type="checkbox" name="timing" value="Anytime"
+                                                class="accent-amber-500"> Anytime
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="mb-6">
+                                    <label for="issue-description"
+                                        class="block text-gray-700 font-semibold mb-2 text-sm">Describe the
+                                        Issue</label>
+                                    <textarea id="issue-description" name="issue-description" rows="4"
+                                        placeholder="Please provide as much detail as possible. E.g., 'The AC is making a loud noise and not cooling...' "
+                                        class="form-input w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none text-sm"
+                                        required></textarea>
+                                </div>
+                                <div class="flex gap-3">
+                                    <button type="button" onclick="prevStep(2)"
+                                        class="flex-1 border-2 border-gray-200 text-gray-600 font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">
+                                        <i class="fas fa-arrow-left mr-1"></i> Back
+                                    </button>
+                                    <button type="submit"
+                                        class="flex-1 cta-glow text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2">
+                                        <i class="fab fa-whatsapp"></i> Submit via WhatsApp
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Success State -->
+                            <div class="form-step" id="step-success">
+                                <div class="text-center py-8">
+                                    <div class="success-checkmark mb-6">
+                                        <i class="fas fa-check text-white text-3xl"></i>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Request Submitted!</h3>
+                                    <p class="text-gray-500 mb-6">Your maintenance request has been sent via WhatsApp.
+                                        Our team will get back to you shortly.</p>
+                                    <button type="button" onclick="resetForm()"
+                                        class="cta-glow text-white font-bold py-3 px-8 rounded-xl">
+                                        Submit Another Request
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-400 text-sm">© <span id="copyright-year">2025</span> Heaven Rooms. All Rights Reserved.
+            </p>
+            <p class="text-xs text-gray-500 mt-1">Developed by <a href="#"
+                    class="font-semibold text-gray-400 hover:text-amber-400 transition-colors">Abhishek Singh</a></p>
+        </div>
+    </footer>
+
+    <div id="toast"
+        class="fixed bottom-10 right-10 bg-green-500 text-white py-3 px-6 rounded-lg shadow-xl transition-transform translate-x-full z-50">
+        <p id="toast-message"></p>
+    </div>
+
+    <script type="module">
+        const toast = document.getElementById('toast');
+        const toastMessage = document.getElementById('toast-message');
+        function showToast(message, isError = false) {
+            if (!toast || !toastMessage) return;
+            toastMessage.textContent = message;
+            toast.className = `fixed bottom-10 right-10 text-white py-3 px-6 rounded-lg shadow-xl transition-transform transform z-50`;
+            toast.classList.add(isError ? 'bg-red-500' : 'bg-green-500');
+            toast.classList.remove('translate-x-full');
+            setTimeout(() => toast.classList.add('translate-x-full'), 3000);
+        }
+
+        const properties = [
+            { name: "SP Bharghaw 1" }, { name: "SP Bharghaw 2" }, { name: "SP Bharghaw 3" }, { name: "Preet Villa" }, { name: "IPS Villa" }, { name: "Ashok PG" }, { name: "VC Apartment" }, { name: "Sukhman Apartment" }, { name: "Starlight PG" }, { name: "Ambey apartment" }, { name: "Ambey apartment 2" }, { name: "SKG apartment" }, { name: "Gururoop apartment" }, { name: "Mahadev PG" }, { name: "Shine PG" }, { name: "Delhi High Court PG" }, { name: "Delhi High Court PG 2" }, { name: "Sky Height Apartment" },
+        ];
+
+        const pgNameSelect = document.getElementById('pg-name');
+        properties.forEach(prop => {
+            const option = document.createElement('option');
+            option.value = prop.name;
+            option.textContent = prop.name;
+            pgNameSelect.appendChild(option);
+        });
+
+        let currentStep = 1;
+        const stepLabels = { 1: 'Step 1: Your Details', 2: 'Step 2: Issue Category', 3: 'Step 3: Description' };
+
+        window.nextStep = function (step) {
+            // Validate current step
+            if (currentStep === 1) {
+                const name = document.getElementById('tenant-name').value.trim();
+                const phone = document.getElementById('tenant-phone').value.trim();
+                const pg = document.getElementById('pg-name').value;
+                const room = document.getElementById('room-number').value.trim();
+                if (!name || !phone || !pg || !room) { showToast('Please fill all fields', true); return; }
+            }
+            if (currentStep === 2) {
+                if (!document.getElementById('issue-category').value) { showToast('Please select an issue category', true); return; }
+                if (!document.getElementById('urgency-level').value) { showToast('Please select urgency level', true); return; }
+            }
+            document.getElementById(`step-${currentStep}`).classList.remove('active');
+            document.getElementById(`step-${step}`).classList.add('active');
+            // Update dots
+            document.getElementById(`dot-${currentStep}`).classList.remove('active');
+            document.getElementById(`dot-${currentStep}`).classList.add('completed');
+            if (currentStep < 3) document.getElementById(`line-${currentStep}`).classList.add('completed');
+            document.getElementById(`dot-${step}`).classList.add('active');
+            document.getElementById('step-label').innerHTML = `<h3 class="text-xl font-bold text-gray-800" style="font-family: var(--body-font);">${stepLabels[step]}</h3>`;
+            currentStep = step;
+        };
+
+        window.prevStep = function (step) {
+            document.getElementById(`step-${currentStep}`).classList.remove('active');
+            document.getElementById(`step-${step}`).classList.add('active');
+            document.getElementById(`dot-${currentStep}`).classList.remove('active');
+            if (step < currentStep) document.getElementById(`line-${step}`).classList.remove('completed');
+            document.getElementById(`dot-${currentStep}`).classList.remove('completed');
+            document.getElementById(`dot-${step}`).classList.add('active');
+            document.getElementById(`dot-${step}`).classList.remove('completed');
+            document.getElementById('step-label').innerHTML = `<h3 class="text-xl font-bold text-gray-800" style="font-family: var(--body-font);">${stepLabels[step]}</h3>`;
+            currentStep = step;
+        };
+
+        window.selectCategory = function (card) {
+            document.querySelectorAll('.category-card').forEach(c => c.classList.remove('selected'));
+            card.classList.add('selected');
+            document.getElementById('issue-category').value = card.dataset.category;
+        };
+
+        window.selectUrgency = function (opt) {
+            document.querySelectorAll('.urgency-option').forEach(o => { o.className = 'urgency-option'; });
+            const u = opt.dataset.urgency;
+            opt.classList.add(u === 'Low' ? 'selected-low' : u === 'Medium' ? 'selected-medium' : 'selected-high');
+            document.getElementById('urgency-level').value = u;
+        };
+
+        window.resetForm = function () {
+            document.getElementById('maintenance-form').reset();
+            document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
+            document.getElementById('step-1').classList.add('active');
+            document.querySelectorAll('.category-card').forEach(c => c.classList.remove('selected'));
+            document.querySelectorAll('.urgency-option').forEach(o => o.className = 'urgency-option');
+            document.querySelectorAll('.step-dot').forEach(d => { d.classList.remove('active', 'completed'); });
+            document.querySelectorAll('.step-line').forEach(l => l.classList.remove('completed'));
+            document.getElementById('dot-1').classList.add('active');
+            document.getElementById('step-label').innerHTML = `<h3 class="text-xl font-bold text-gray-800" style="font-family: var(--body-font);">Step 1: Your Details</h3>`;
+            currentStep = 1;
+        };
+
+        const maintenanceForm = document.getElementById('maintenance-form');
+        maintenanceForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(maintenanceForm);
+            const timingCheckboxes = maintenanceForm.querySelectorAll('input[name="timing"]:checked');
+            if (timingCheckboxes.length === 0) { showToast('Please select at least one preferred time slot.', true); return; }
+            if (!formData.get('issue-description').trim()) { showToast('Please describe the issue.', true); return; }
+
+            const preferredTimings = Array.from(timingCheckboxes).map(cb => cb.value).join(', ');
+            const whatsappMessage = `*New Maintenance Request*%0A%0A` +
+                `*Tenant Name:* ${formData.get('tenant-name')}%0A` +
+                `*Phone:* ${formData.get('tenant-phone')}%0A` +
+                `*PG Name:* ${formData.get('pg-name')}%0A` +
+                `*Room No:* ${formData.get('room-number')}%0A` +
+                `*Urgency:* ${formData.get('urgency-level')}%0A` +
+                `*Category:* ${formData.get('issue-category')}%0A` +
+                `*Preferred Timing(s):* ${preferredTimings}%0A%0A` +
+                `*Issue Description:*%0A${formData.get('issue-description')}`;
+
+            window.open(`https://wa.me/919142272776?text=${whatsappMessage}`, '_blank');
+
+            // Show success
+            document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
+            document.getElementById('step-success').classList.add('active');
+            document.querySelectorAll('.step-dot').forEach(d => { d.classList.remove('active'); d.classList.add('completed'); });
+            document.querySelectorAll('.step-line').forEach(l => l.classList.add('completed'));
+            document.getElementById('step-label').innerHTML = `<h3 class="text-xl font-bold text-green-600" style="font-family: var(--body-font);">✓ Submitted Successfully</h3>`;
+        });
+
+        // Custom Cursor
+        const cursor = document.querySelector('.cursor');
+        const follower = document.querySelector('.cursor-follower');
+        let posX = 0, posY = 0, mouseX = 0, mouseY = 0;
+        document.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; });
+        setInterval(() => {
+            posX += (mouseX - posX) / 6;
+            posY += (mouseY - posY) / 6;
+            if (cursor) { cursor.style.left = mouseX + 'px'; cursor.style.top = mouseY + 'px'; }
+            if (follower) { follower.style.left = posX + 'px'; follower.style.top = posY + 'px'; }
+        }, 16);
+        document.body.addEventListener('mouseover', e => {
+            if (e.target.closest('a') || e.target.closest('button') || e.target.closest('.category-card') || e.target.closest('.urgency-option')) {
+                cursor.classList.add('hover'); follower.classList.add('hover');
+            }
+        });
+        document.body.addEventListener('mouseout', () => {
+            cursor.classList.remove('hover'); follower.classList.remove('hover');
+        });
+
+        // Scroll Progress
+        window.addEventListener('scroll', () => {
+            const h = document.documentElement;
+            const scrollPx = h.scrollTop || document.body.scrollTop;
+            const winHeightPx = h.scrollHeight - h.clientHeight;
+            const scrolled = (scrollPx / winHeightPx) * 100;
+            const progress = document.getElementById('scroll-progress');
+            if (progress) progress.style.width = scrolled + '%';
+        });
+
+        // Copyright year
+        const yearEl = document.getElementById('copyright-year');
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
+    </script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+        const hamburgerButton = document.getElementById('hamburger-button');
+        const closeMenuButton = document.getElementById('close-menu-button');
+        const menuOverlay = document.getElementById('menu-overlay');
+        const menuLinks = document.querySelectorAll('.menu-link');
+        function openMenu() { document.body.classList.add('menu-open'); }
+        function closeMenu() { document.body.classList.remove('menu-open'); }
+        hamburgerButton.addEventListener('click', openMenu);
+        closeMenuButton.addEventListener('click', closeMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+        menuLinks.forEach(link => { link.addEventListener('click', closeMenu); });
+    </script>
+</body>
+
+</html>
