@@ -44,8 +44,7 @@ It’s designed to feel like a **mobile app on the web**, focusing on:
 
 ---
 
-## 📸 Preview
-![Heaven Rooms Preview](./WhatsApp%20Image%202026-01-27%20at%2016.45.13.jpeg)
+
 
 ---
 
