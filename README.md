@@ -1,39 +1,78 @@
-# HEAVEN ROOMS 🏡✨
-**Heaven Rooms** is a premium student PG & accommodation discovery experience near **LPU (Lovely Professional University)** — built with an app-like frontend UI featuring **dynamic property filtering**, **glassmorphism aesthetics**, **micro-interactions**, and **WhatsApp-based instant inquiry**.
+<div align="center">
 
-> A fast, responsive and visually immersive accommodation platform designed for students who want to find their next stay in minutes.
+# HEAVEN ROOMS 🏡✨  
+### Premium PG & Student Accommodation Finder Near **LPU**
+
+**A modern, app-like frontend experience** to help students discover their next stay in minutes — built with **glassmorphism UI**, **smooth micro-animations**, **smart filtering**, and **1‑tap WhatsApp inquiries**.
+
+<br/>
+
+<a href="https://heaven-rooms.vercel.app"><strong>🔗 Live Website</strong></a>
+&nbsp;•&nbsp;
+<a href="#-preview">📸 Preview</a>
+&nbsp;•&nbsp;
+<a href="#-features">🚀 Features</a>
+&nbsp;•&nbsp;
+<a href="#-run-locally">⚡ Run Locally</a>
+&nbsp;•&nbsp;
+<a href="#-contact">📩 Contact</a>
+
+<br/><br/>
+
+<img src="https://img.shields.io/badge/Frontend-HTML%2FCSS%2FJS-black" />
+<img src="https://img.shields.io/badge/Design-Glassmorphism-6a5acd" />
+<img src="https://img.shields.io/badge/Booking-WhatsApp%20Integration-25D366" />
+<img src="https://img.shields.io/badge/Status-Live%20on%20Vercel-0aa0ff" />
+
+</div>
 
 ---
 
-## Preview / Screenshot
-> Add your best UI screenshot here (recommended)
+## ✨ What is Heaven Rooms?
+**Heaven Rooms** is a premium student PG discovery platform near **Lovely Professional University (LPU)**.
 
+It’s designed to feel like a **mobile app on the web**, focusing on:
+- **Speed** — shortlist rooms quickly  
+- **Clarity** — clean bento layouts & readable property cards  
+- **Conversion** — instant WhatsApp inquiry for faster bookings  
+
+---
+
+## 🌐 Live Demo
+**Visit:** https://heaven-rooms.vercel.app  
+> Tip: Open on mobile for the full “app-like” experience.
+
+---
+
+## 📸 Preview
 ![Heaven Rooms Preview](./WhatsApp%20Image%202026-01-27%20at%2016.45.13.jpeg)
 
 ---
 
-## Key Features
-- **Premium UI/UX** with glassmorphism styling
-- **Dynamic property filtering** (find rooms that match your needs quickly)
-- **Bento-grid style layouts** for modern content presentation
-- **Scroll-triggered animations** & smooth micro-interactions
-- **WhatsApp integration** for instant booking inquiry / lead generation
-- **Responsive design** (mobile-first & desktop friendly)
-- Dedicated pages:
-  - `privacy.html` (Privacy Policy)
-  - `terms.html` (Terms & Conditions)
-  - `maintenance.html` (Maintenance mode page)
+## 🚀 Features
+### ✅ Experience
+- **Glassmorphism premium UI** (clean + modern)
+- **Bento-grid layouts** for beautiful content structure
+- **Scroll-triggered animations** & micro-interactions
+- **Fully responsive** (mobile-first + desktop-ready)
+
+### 🔍 Discovery
+- **Dynamic property filtering** to shortlist faster
+- Property cards designed for **quick decision-making**
+
+### 📲 Booking / Leads
+- **WhatsApp integration** for instant booking inquiries & lead generation
 
 ---
 
-## Tech Stack
+## 🧰 Tech Stack
 - **HTML5**
 - **CSS3**
-- **JavaScript (Vanilla JS)**
+- **Vanilla JavaScript**
 
 ---
 
-## Project Structure
+## 🗂️ Project Structure
 ```text
 HEAVEN-ROOMS-/
 ├─ index.html
@@ -47,44 +86,47 @@ HEAVEN-ROOMS-/
 
 ---
 
-## Getting Started (Run Locally)
-### 1) Clone the repository
+## ⚡ Run Locally
+### 1) Clone
 ```bash
 git clone https://github.com/Abhi-2636/HEAVEN-ROOMS-.git
 ```
 
-### 2) Open the project
-- Open `index.html` directly in your browser  
-**OR**
-- Use VS Code Live Server for best experience.
+### 2) Open
+- Open `index.html` in your browser  
+**or**
+- Use **VS Code Live Server** (recommended)
 
 ---
 
-## WhatsApp Inquiry Integration
-This project supports instant user inquiries via WhatsApp.
+## 📲 WhatsApp Inquiry (Already Set)
+Click to inquire instantly:
 
-✅ Replace this with your WhatsApp number in your JS / HTML where the WhatsApp link is used:
-```text
-https://wa.me/<YOUR_NUMBER>?text=<YOUR_MESSAGE>
-```
+- **WhatsApp:** https://wa.me/918409898626?text=Hi%20I%20want%20to%20book%20a%20room%20near%20LPU
 
-Example:
-```text
-https://wa.me/919999999999?text=Hi%20I%20want%20to%20book%20a%20room%20near%20LPU
-```
+> Number used: **+91 8409898626**
 
 ---
 
-## Roadmap (Optional)
-- [ ] Add backend (admin dashboard for listings)
-- [ ] Add map-based property search
-- [ ] Add authentication for owners/agents
-- [ ] Add booking slots / visit scheduling
+## 📩 Contact
+For collaborations, listings, or business inquiries:
+
+- **Email:** abhisingh11644@gmail.com  
+- **WhatsApp:** +91 8409898626
 
 ---
 
-## Contributing
-Contributions are welcome!
+## 🛣️ Roadmap
+- [ ] Backend (admin dashboard for listings)
+- [ ] Map-based PG search
+- [ ] Owner/Agent authentication
+- [ ] Booking slots / visit scheduling
+- [ ] Save favorites + compare stays
+
+---
+
+## 🤝 Contributing
+Contributions are welcome:
 1. Fork the repo  
 2. Create a feature branch  
 3. Commit your changes  
@@ -92,12 +134,16 @@ Contributions are welcome!
 
 ---
 
-## License
-This project is currently **not licensed**.  
-If you want, add an MIT License for open-source usage.
+## 📄 License
+Currently **not licensed**.  
+If you want open-source reuse, add an **MIT License**.
 
 ---
 
-## Author
+<div align="center">
+
+## 👤 Author
 **Abhi (Abhi-2636)**  
-If you like the project, consider giving it a ⭐ on GitHub.
+If you like this project, consider giving it a ⭐ — it helps a lot!
+
+</div>
